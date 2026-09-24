@@ -293,7 +293,7 @@
     }
 
     /* =========================================
-       Teaching Section Styles 
+       Fields Section Styles 
        ========================================= */
     .institution-title {
       font-family: Georgia, serif;
@@ -593,7 +593,7 @@
         <a href="#home" class="nav-link active" data-section="home">Home</a>
         <a href="#publications" class="nav-link" data-section="publications">Publications</a>
         <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <a href="#teaching" class="nav-link" data-section="teaching">Teaching</a>
+        <a href="#fields" class="nav-link" data-section="fields">Fields</a>
         <a href="#cv" class="nav-link" data-section="cv">CV</a>
       </nav>
     </header>
@@ -1083,6 +1083,11 @@
         event.preventDefault();
       }
 
+      // 존재하지 않는 섹션이면 홈으로 이동 (빈 화면 방지)
+      if (!document.getElementById(sectionId)) {
+        sectionId = 'home';
+      }
+
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
@@ -1093,9 +1098,9 @@
 
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => {
-        // 상세페이지에 있을 경우 상단 Navigation은 'Teaching' 탭을 활성화 상태로 유지
+        // 상세페이지에 있을 경우 상단 Navigation은 'Fields' 탭을 활성화 상태로 유지
         if (link.getAttribute('data-section') === sectionId || 
-           (sectionId.includes('course-detail') && link.getAttribute('data-section') === 'teaching')) {
+           (sectionId.includes('course-detail') && link.getAttribute('data-section') === 'fields')) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
