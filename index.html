@@ -636,19 +636,31 @@
     </section>
 
     <!-- SECTION 3: PROJECTS -->
-    <section id="projects" class="page-section">
+<section id="projects" class="page-section">
       <h1 class="section-title">Projects</h1>
       <p class="subtext">Research grants and industry collaborations</p>
       
-      <div class="pub-item">
-        <div class="pub-content">
-          <div class="pub-title" style="font-size: 1.1rem; margin-bottom: 4px;">Center for Foundations of Mathematical Algorithms and Security</div>
-          <p style="font-size: 0.9rem; color: #4b5563;">Science Research Center (SRC) · National Research Foundation of Korea (NRF)</p>
-          <div class="pub-meta" style="margin-top: 10px;">
-            <span class="badge badge-preprint">2026 – 2033</span>
-            <span class="badge badge-journal">ONGOING</span>
-          </div>
+      <!-- Flexbox를 사용하여 3단(좌/중/우)으로 배치 -->
+      <div class="pub-item" style="display: flex; align-items: center; gap: 30px; padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
+        
+        <!-- 1. 좌측 영역 (날짜 및 상태 배지) -->
+        <div class="pub-meta-left" style="min-width: 130px;">
+          <div style="font-size: 1.25rem; color: #374151; margin-bottom: 8px;">2026 – 2027</div>
+          <span class="badge badge-journal" style="background: #e0e7ff; color: #1e40af; border: 1px solid #c7d2fe; padding: 4px 12px;">ONGOING</span>
         </div>
+
+        <!-- 2. 중앙 영역 (프로젝트 제목 및 소속) -->
+        <div class="pub-content" style="flex: 1;">
+          <div class="pub-title" style="font-size: 1.15rem; font-weight: 600; color: #1f2937; margin-bottom: 4px;">NON-COMMUTATIVE DYNAMICS ON MANIFOLDS</div>
+          <p style="font-size: 0.95rem; color: #6b7280;">Munjeong High School(MHS)</p>
+        </div>
+
+        <!-- 3. 우측 영역 (이미지) -->
+        <div class="pub-image" style="flex-shrink: 0;">
+          <!-- src 속성에 실제 이미지 경로를 넣어주세요 -->
+          <img src="image_3be95e.png" alt="Project Image" style="width: 240px; height: 130px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb;">
+        </div>
+        
       </div>
     </section>
 
