@@ -682,6 +682,7 @@
     </section>
 
     <!-- SECTION 4: TEACHING LIST -->
+    <!-- SECTION 4: TEACHING LIST -->
     <section id="teaching" class="page-section">
       <h1 class="section-title">Teaching</h1>
       <p class="subtext">Course pages with lecture notes, syllabi, and assignments.</p>
@@ -689,7 +690,6 @@
       <!-- 1. Seoul National University -->
       <h2 class="institution-title">Seoul National University</h2>
       
-      <!-- 수정됨: 새로운 상세 페이지로 이동하도록 onclick 변경 -->
       <div class="course-card" onclick="navigateTo(event, 'course-detail-ma1407')">
         <div class="course-header">
           <div class="course-thumb">
@@ -714,8 +714,7 @@
         </div>
       </div>
 
-      <!-- 나머지 강의들은 기존처럼 토글 형태 유지 -->
-      <div class="course-card" onclick="toggleCourse(this)">
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-snu3341')">
         <div class="course-header">
           <div class="course-thumb">
             <svg viewBox="0 0 100 65" class="thumb-svg">
@@ -731,20 +730,13 @@
             <h3 class="course-name">Mathematical and Numerical Optimization</h3>
             <p class="course-history"><strong>Spring 2026</strong></p>
           </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Introduction to convex optimization, numerical methods, and algorithm implementation for solving real-world data problems.</p>
-          </div>
         </div>
       </div>
 
       <!-- 2. KAIST -->
       <h2 class="institution-title">KAIST</h2>
       
-      <div class="course-card" onclick="toggleCourse(this)">
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-ie331')">
         <div class="course-header">
           <div class="course-thumb">
             <svg viewBox="0 0 100 65" class="thumb-svg">
@@ -759,17 +751,10 @@
             <h3 class="course-name">Operations Research: Optimization</h3>
             <p class="course-history">Spring 2023, 2024</p>
           </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Fundamentals of linear programming, simplex algorithms, and decision modeling.</p>
-          </div>
         </div>
       </div>
 
-      <div class="course-card" onclick="toggleCourse(this)">
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-ie539')">
         <div class="course-header">
           <div class="course-thumb">
             <svg viewBox="0 0 100 65" class="thumb-svg">
@@ -783,20 +768,13 @@
             <h3 class="course-name">Convex Optimization</h3>
             <p class="course-history">Fall 2022, 2023, 2024</p>
           </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Advanced topics in convex sets, functions, and optimization problems with applications in engineering.</p>
-          </div>
         </div>
       </div>
 
       <!-- 3. POSTECH -->
       <h2 class="institution-title">Lecture series</h2>
       
-      <div class="course-card" onclick="toggleCourse(this)">
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-postech')">
         <div class="course-header">
           <div class="course-thumb">
             <svg viewBox="0 0 100 65" class="thumb-svg">
@@ -813,18 +791,15 @@
             <h3 class="course-name">Introduction to Modern Combinatorial Optimization</h3>
             <p class="course-history">Winter Lecture Series 2025</p>
           </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Special winter lecture series covering polyhedral combinatorics and cutting plane methods.</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4.1: COURSE DETAIL PAGE (NEW) -->
+    <!-- =========================================
+         COURSE DETAIL PAGES
+         ========================================= -->
+
+    <!-- COURSE DETAIL 1: MA1407 (SNU) -->
     <section id="course-detail-ma1407" class="page-section">
       <div class="breadcrumb">
         <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / Seoul National University
@@ -837,7 +812,6 @@
           <p>Mathematical Foundations of Modern Artificial Intelligence</p>
         </div>
         <div class="course-hero-img">
-          <!-- 썸네일 SVG -->
           <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
             <rect width="100" height="65" fill="#f8fafc" />
             <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
@@ -853,12 +827,10 @@
       </div>
 
       <div class="course-body-grid">
-        <!-- 왼쪽 내용 영역 -->
         <div class="course-main">
           <p class="course-description">
             Optimization, the process of finding the best solution among a set of alternatives, lies at the heart of modern data-driven decision-making. This course explores the fundamental principles, algorithms, and applications of mathematical optimization, covering convex optimization, nonconvex optimization, minimax optimization, submodular optimization, online learning, and online reinforcement learning. There are no formal prerequisites, but basic knowledge of mathematical optimization and convex analysis is assumed.
           </p>
-
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
@@ -899,11 +871,201 @@
             </li>
           </ul>
         </div>
-
-        <!-- 오른쪽 사이드바 (강사 정보) -->
         <div class="course-sidebar">
           <div class="instructor-box">
             <p><strong>Instructor:</strong> Eugene Choi (Building 301, Room 402)</p>
+            <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE DETAIL 2: SNU 3341.454 -->
+    <section id="course-detail-snu3341" class="page-section">
+      <div class="breadcrumb">
+        <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / Seoul National University
+      </div>
+      
+      <div class="course-hero">
+        <div class="course-hero-content">
+          <span class="badge badge-gray">Spring 2026</span>
+          <h1>3341.454: Mathematical and Numerical Optimization</h1>
+          <p>Introduction to convex optimization and numerical methods</p>
+        </div>
+        <div class="course-hero-img">
+          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
+            <rect width="100" height="65" fill="#f8fafc" />
+            <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
+            <path d="M 10 40 Q 50 10 90 40" fill="none" stroke="#3b82f6" stroke-width="1" />
+            <circle cx="50" cy="40" r="3" fill="#f59e0b" />
+            <line x1="20" y1="40" x2="50" y2="40" stroke="#f87171" stroke-width="1.5" stroke-dasharray="2,2" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="course-body-grid">
+        <div class="course-main">
+          <p class="course-description">
+            Introduction to convex optimization, numerical methods, and algorithm implementation for solving real-world data problems. This course focuses on bridging the gap between mathematical theory and practical algorithmic implementations.
+          </p>
+          <h2>Lecture notes</h2>
+          <ul class="lecture-list">
+            <li class="lecture-item">
+              <div class="lec-num">1</div>
+              <div class="lec-date">Week 1</div>
+              <div class="lec-topic">Overview of Numerical Optimization and Basic Matrix Algebra</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">2</div>
+              <div class="lec-date">Week 2</div>
+              <div class="lec-topic">Unconstrained Optimization: Line Search Methods</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="instructor-box">
+            <p><strong>Instructor:</strong> Eugene Choi (Building 301, Room 402)</p>
+            <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE DETAIL 3: KAIST IE331 -->
+    <section id="course-detail-ie331" class="page-section">
+      <div class="breadcrumb">
+        <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / KAIST
+      </div>
+      
+      <div class="course-hero">
+        <div class="course-hero-content">
+          <span class="badge badge-gray">Spring 2024</span>
+          <h1>IE331: Operations Research: Optimization</h1>
+          <p>Fundamentals of linear programming and decision modeling</p>
+        </div>
+        <div class="course-hero-img">
+          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
+            <rect width="100" height="65" fill="#f8fafc" />
+            <polygon points="30,50 30,20 60,15 80,35 70,50" fill="#a7f3d0" opacity="0.6" stroke="#059669" stroke-width="1" />
+            <line x1="10" y1="30" x2="90" y2="10" stroke="#fbbf24" stroke-width="1" />
+            <circle cx="60" cy="15" r="3" fill="#f59e0b" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="course-body-grid">
+        <div class="course-main">
+          <p class="course-description">
+            Fundamentals of linear programming, simplex algorithms, and decision modeling. Students will learn how to formulate real-world industrial engineering problems into mathematical models and solve them efficiently.
+          </p>
+          <h2>Lecture notes</h2>
+          <ul class="lecture-list">
+            <li class="lecture-item">
+              <div class="lec-num">1</div>
+              <div class="lec-date">Week 1</div>
+              <div class="lec-topic">Introduction to Operations Research and Linear Programming Formulation</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="instructor-box">
+            <p><strong>Instructor:</strong> Eugene Choi</p>
+            <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE DETAIL 4: KAIST IE539 -->
+    <section id="course-detail-ie539" class="page-section">
+      <div class="breadcrumb">
+        <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / KAIST
+      </div>
+      
+      <div class="course-hero">
+        <div class="course-hero-content">
+          <span class="badge badge-gray">Fall 2024</span>
+          <h1>IE539: Convex Optimization</h1>
+          <p>Advanced topics in convex sets and functions</p>
+        </div>
+        <div class="course-hero-img">
+          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
+            <rect width="100" height="65" fill="#f8fafc" />
+            <path d="M 15 15 Q 50 70 85 15" fill="#ddd6fe" opacity="0.6" stroke="#7c3aed" stroke-width="1.5" />
+            <circle cx="50" cy="43" r="3" fill="#f87171" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="course-body-grid">
+        <div class="course-main">
+          <p class="course-description">
+            Advanced topics in convex sets, functions, and optimization problems with applications in engineering. Topics include duality theory, interior-point methods, and large-scale optimization techniques.
+          </p>
+          <h2>Lecture notes</h2>
+          <ul class="lecture-list">
+            <li class="lecture-item">
+              <div class="lec-num">1</div>
+              <div class="lec-date">Week 1</div>
+              <div class="lec-topic">Convex Sets and Convex Functions Revisited</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="instructor-box">
+            <p><strong>Instructor:</strong> Eugene Choi</p>
+            <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE DETAIL 5: POSTECH -->
+    <section id="course-detail-postech" class="page-section">
+      <div class="breadcrumb">
+        <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / Lecture series
+      </div>
+      
+      <div class="course-hero">
+        <div class="course-hero-content">
+          <span class="badge badge-gray">Winter 2025</span>
+          <h1>Introduction to Modern Combinatorial Optimization</h1>
+          <p>Special winter lecture series</p>
+        </div>
+        <div class="course-hero-img">
+          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
+            <rect width="100" height="65" fill="#f8fafc" />
+            <path d="M 20 20 L 40 10 L 60 25 L 80 15 L 75 45 L 50 50 L 30 40 Z" fill="none" stroke="#ef4444" stroke-width="1.5" />
+            <circle cx="20" cy="20" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+            <circle cx="40" cy="10" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+            <circle cx="60" cy="25" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+            <circle cx="50" cy="50" r="3" fill="#f59e0b" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="course-body-grid">
+        <div class="course-main">
+          <p class="course-description">
+            Special winter lecture series covering polyhedral combinatorics and cutting plane methods. Designed to give students an intensive overview of discrete optimization frameworks used in theoretical computer science.
+          </p>
+          <h2>Lecture notes</h2>
+          <ul class="lecture-list">
+            <li class="lecture-item">
+              <div class="lec-num">1</div>
+              <div class="lec-date">Day 1</div>
+              <div class="lec-topic">Fundamentals of Polyhedral Combinatorics</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+          </ul>
+        </div>
+        <div class="course-sidebar">
+          <div class="instructor-box">
+            <p><strong>Instructor:</strong> Eugene Choi</p>
             <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
           </div>
         </div>
