@@ -45,10 +45,12 @@
     }
 
     .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: normal;
       color: var(--text-main);
       text-decoration: none;
+      cursor: pointer;
     }
 
     nav {
@@ -59,6 +61,7 @@
     .nav-link {
       text-decoration: none;
       color: var(--text-muted);
+      font-size: 0.95rem;
       font-weight: 500;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
@@ -89,9 +92,9 @@
     /* Typography */
     h1.section-title {
       font-family: Georgia, serif;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       font-weight: normal;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .subtext {
@@ -124,6 +127,7 @@
     .profile-info p {
       margin-bottom: 8px;
       color: #4b5563;
+      font-size: 0.95rem;
     }
 
     .btn {
@@ -170,6 +174,7 @@
       font-weight: bold;
       color: var(--text-muted);
       text-transform: uppercase;
+      margin-bottom: 4px;
     }
 
     /* Filter Buttons */
@@ -177,28 +182,30 @@
       display: flex;
       gap: 10px;
       margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
     .filter-btn {
-      padding: 8px 20px;
+      padding: 6px 16px;
       border-radius: 25px;
       border: 1px solid var(--border-color);
       background: white;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
     .filter-btn:hover {
       background: #f3f4f6;
+      color: var(--text-main);
     }
 
     .filter-btn.active {
-      background: #1e3a8a;
-      color: white;
-      border-color: #1e3a8a;
+      background: #eef2ff;
+      color: var(--primary-color);
+      border-color: #c7d2fe;
     }
 
     /* List Items (Publications & Projects) */
@@ -220,12 +227,16 @@
     }
 
     .pub-title {
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1.05rem;
       color: var(--text-main);
       text-decoration: none;
       display: block;
       margin-bottom: 6px;
+    }
+    
+    a.pub-title:hover {
+      text-decoration: underline;
     }
 
     .pub-authors {
@@ -236,6 +247,7 @@
 
     .pub-authors u {
       text-decoration-color: #9ca3af;
+      text-underline-offset: 2px;
     }
 
     .pub-meta {
@@ -260,7 +272,8 @@
 
     .venue-name {
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      color: #374151;
     }
 
     .link-badge {
@@ -271,6 +284,146 @@
     }
 
     .link-badge:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================================
+       Teaching Section Styles (Accordion Cards)
+       ========================================= */
+    .institution-title {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: normal;
+      color: var(--text-main);
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .course-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .course-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .course-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .course-thumb {
+      width: 110px;
+      height: 75px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .thumb-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .course-info {
+      flex: 1;
+    }
+
+    .course-code {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .course-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .course-history {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .course-history strong {
+      color: var(--text-main);
+      margin-right: 6px;
+    }
+
+    .arrow-icon {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      transition: transform 0.3s ease;
+    }
+
+    .course-card.active .arrow-icon {
+      transform: rotate(180deg);
+      color: var(--primary-color);
+    }
+
+    .course-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .course-card.active .course-detail {
+      max-height: 400px;
+      opacity: 1;
+      border-top: 1px solid var(--border-color);
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+    }
+
+    .detail-content h5 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .detail-content p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .detail-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .detail-content li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .detail-content a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .detail-content a:hover {
       text-decoration: underline;
     }
 
@@ -294,6 +447,23 @@
         gap: 15px;
         align-items: flex-start;
       }
+      .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .course-thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+      }
+      .arrow-icon {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+      }
+      .course-card {
+        position: relative;
+      }
     }
   </style>
 </head>
@@ -301,14 +471,15 @@
 
   <div class="container">
     <!-- Navigation Header -->
+    <!-- 수정됨: inline onclick 제거 및 data-section 속성만 유지하여 스크립트 충돌 방지 -->
     <header>
-      <a href="#home" class="site-title" onclick="navigateTo('home')">Eugene Choi</a>
+      <a href="#home" class="site-title" data-section="home">Eugene Choi</a>
       <nav>
-        <a class="nav-link active" data-section="home" onclick="navigateTo('home')">Home</a>
-        <a class="nav-link" data-section="publications" onclick="navigateTo('publications')">Publications</a>
-        <a class="nav-link" data-section="projects" onclick="navigateTo('projects')">Projects</a>
-        <a class="nav-link" data-section="teaching" onclick="navigateTo('teaching')">Teaching</a>
-        <a class="nav-link" data-section="cv" onclick="navigateTo('cv')">CV</a>
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#teaching" class="nav-link" data-section="teaching">Teaching</a>
+        <a href="#cv" class="nav-link" data-section="cv">CV</a>
       </nav>
     </header>
 
@@ -322,18 +493,18 @@
           <p>Seoul National University</p>
           <p>Office: Building 301, Room 402</p>
           <p>E-mail: eugene [at] snu [dot] ac [dot] kr</p>
-          <a href="#" class="btn" onclick="navigateTo('cv')">CV (pdf)</a>
+          <a href="#cv" class="btn" data-section="cv">CV (pdf)</a>
         </div>
       </div>
 
-      <h2>About</h2>
+      <h1 class="section-title" style="font-size: 2rem;">About</h1>
       <p style="margin-top: 10px;">
         안녕하세요! 인공지능, 기계학습 및 최적화 이론을 연구하고 있습니다. 
         I am an Assistant Professor at Seoul National University. My research interests include artificial intelligence, machine learning, and data science.
       </p>
 
       <div class="news-section">
-        <h3>News</h3>
+        <h3 style="margin-bottom: 15px; font-family: Georgia, serif; font-size: 1.4rem;">News</h3>
         <div class="news-item">
           <div class="news-date">SEP 2026</div>
           <p>Personal website launched on GitHub Pages!</p>
@@ -348,9 +519,8 @@
     <!-- SECTION 2: PUBLICATIONS -->
     <section id="publications" class="page-section">
       <h1 class="section-title">Publications</h1>
-      <p class="subtext">* corresponding author · <u>underlined</u> names are group members and alumni · (α–β) alphabetical author order</p>
+      <p class="subtext">* corresponding author · <u>underlined</u> names are group members and alumni</p>
 
-      <!-- Category Filter Buttons -->
       <div class="filter-group">
         <button class="filter-btn active" data-filter="all" onclick="filterPublications('all')">All</button>
         <button class="filter-btn" data-filter="preprint" onclick="filterPublications('preprint')">Preprints</button>
@@ -410,9 +580,10 @@
       
       <div class="pub-item">
         <div class="pub-content">
-          <a href="#" class="pub-title">Center for Foundations of Mathematical Algorithms and Security</a>
+          <!-- 수정됨: 링크가 아닌 단순 제목(div/span)으로 변경하여 최상단으로 튕기는 현상 원천 차단 -->
+          <div class="pub-title" style="font-size: 1.1rem; margin-bottom: 4px;">Center for Foundations of Mathematical Algorithms and Security</div>
           <p style="font-size: 0.9rem; color: #4b5563;">Science Research Center (SRC) · National Research Foundation of Korea (NRF)</p>
-          <div class="pub-meta" style="margin-top: 8px;">
+          <div class="pub-meta" style="margin-top: 10px;">
             <span class="badge badge-preprint">2026 – 2033</span>
             <span class="badge badge-journal">ONGOING</span>
           </div>
@@ -423,10 +594,157 @@
     <!-- SECTION 4: TEACHING -->
     <section id="teaching" class="page-section">
       <h1 class="section-title">Teaching</h1>
-      <ul style="margin-left: 20px; margin-top: 20px;">
-        <li><strong>CS101: Introduction to Computer Science</strong> (Fall 2026)</li>
-        <li><strong>CS401: Artificial Intelligence & Optimization</strong> (Spring 2026)</li>
-      </ul>
+      <p class="subtext">Course pages with lecture notes, syllabi, and assignments.</p>
+
+      <!-- 1. Seoul National University -->
+      <h2 class="institution-title">Seoul National University</h2>
+      
+      <div class="course-card" onclick="toggleCourse(this)">
+        <div class="course-header">
+          <div class="course-thumb">
+            <!-- 네트워크 노드 형태의 SVG 썸네일 -->
+            <svg viewBox="0 0 100 65" class="thumb-svg">
+              <rect width="100" height="65" fill="#f8fafc" />
+              <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
+              <line x1="20" y1="32" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+              <line x1="50" y1="15" x2="80" y2="32" stroke="#cbd5e1" stroke-width="1.5" />
+              <line x1="50" y1="50" x2="80" y2="32" stroke="#fca5a5" stroke-width="1.5" />
+              <circle cx="20" cy="32" r="4" fill="#818cf8" />
+              <circle cx="50" cy="15" r="4" fill="#c084fc" />
+              <circle cx="50" cy="50" r="4" fill="#6366f1" />
+              <circle cx="80" cy="32" r="4" fill="#f87171" />
+            </svg>
+          </div>
+          <div class="course-info">
+            <span class="course-code">MA1407.000500</span>
+            <h3 class="course-name">Mathematical Algorithms II</h3>
+            <p class="course-history"><strong>Fall 2026</strong> Mathematical Foundations of Modern Artificial Intelligence</p>
+            <p class="course-history"><strong>Fall 2025</strong> Design and Analysis of Algorithms and Optimization Methods</p>
+          </div>
+          <span class="arrow-icon">▼</span>
+        </div>
+        <div class="course-detail">
+          <div class="detail-content">
+            <h5>Course Description</h5>
+            <p>This course covers the mathematical foundations of modern artificial intelligence and machine learning algorithms, focusing on optimization theories and deep learning mathematics.</p>
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#" onclick="event.stopPropagation();">📄 Syllabus (PDF)</a></li>
+              <li><a href="#" onclick="event.stopPropagation();">📚 Lecture Notes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" onclick="toggleCourse(this)">
+        <div class="course-header">
+          <div class="course-thumb">
+            <!-- 3D 곡면 형태의 SVG 썸네일 -->
+            <svg viewBox="0 0 100 65" class="thumb-svg">
+              <rect width="100" height="65" fill="#f8fafc" />
+              <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
+              <path d="M 10 40 Q 50 10 90 40" fill="none" stroke="#3b82f6" stroke-width="1" />
+              <circle cx="50" cy="40" r="3" fill="#f59e0b" />
+              <line x1="20" y1="40" x2="50" y2="40" stroke="#f87171" stroke-width="1.5" stroke-dasharray="2,2" />
+            </svg>
+          </div>
+          <div class="course-info">
+            <span class="course-code">3341.454</span>
+            <h3 class="course-name">Mathematical and Numerical Optimization</h3>
+            <p class="course-history"><strong>Spring 2026</strong></p>
+          </div>
+          <span class="arrow-icon">▼</span>
+        </div>
+        <div class="course-detail">
+          <div class="detail-content">
+            <h5>Course Description</h5>
+            <p>Introduction to convex optimization, numerical methods, and algorithm implementation for solving real-world data problems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. KAIST -->
+      <h2 class="institution-title">KAIST</h2>
+      
+      <div class="course-card" onclick="toggleCourse(this)">
+        <div class="course-header">
+          <div class="course-thumb">
+            <svg viewBox="0 0 100 65" class="thumb-svg">
+              <rect width="100" height="65" fill="#f8fafc" />
+              <polygon points="30,50 30,20 60,15 80,35 70,50" fill="#a7f3d0" opacity="0.6" stroke="#059669" stroke-width="1" />
+              <line x1="10" y1="30" x2="90" y2="10" stroke="#fbbf24" stroke-width="1" />
+              <circle cx="60" cy="15" r="3" fill="#f59e0b" />
+            </svg>
+          </div>
+          <div class="course-info">
+            <span class="course-code">IE331</span>
+            <h3 class="course-name">Operations Research: Optimization</h3>
+            <p class="course-history">Spring 2023, 2024</p>
+          </div>
+          <span class="arrow-icon">▼</span>
+        </div>
+        <div class="course-detail">
+          <div class="detail-content">
+            <h5>Course Description</h5>
+            <p>Fundamentals of linear programming, simplex algorithms, and decision modeling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" onclick="toggleCourse(this)">
+        <div class="course-header">
+          <div class="course-thumb">
+            <svg viewBox="0 0 100 65" class="thumb-svg">
+              <rect width="100" height="65" fill="#f8fafc" />
+              <path d="M 15 15 Q 50 70 85 15" fill="#ddd6fe" opacity="0.6" stroke="#7c3aed" stroke-width="1.5" />
+              <circle cx="50" cy="43" r="3" fill="#f87171" />
+            </svg>
+          </div>
+          <div class="course-info">
+            <span class="course-code">IE539</span>
+            <h3 class="course-name">Convex Optimization</h3>
+            <p class="course-history">Fall 2022, 2023, 2024</p>
+          </div>
+          <span class="arrow-icon">▼</span>
+        </div>
+        <div class="course-detail">
+          <div class="detail-content">
+            <h5>Course Description</h5>
+            <p>Advanced topics in convex sets, functions, and optimization problems with applications in engineering.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. POSTECH -->
+      <h2 class="institution-title">Lecture series</h2>
+      
+      <div class="course-card" onclick="toggleCourse(this)">
+        <div class="course-header">
+          <div class="course-thumb">
+            <svg viewBox="0 0 100 65" class="thumb-svg">
+              <rect width="100" height="65" fill="#f8fafc" />
+              <path d="M 20 20 L 40 10 L 60 25 L 80 15 L 75 45 L 50 50 L 30 40 Z" fill="none" stroke="#ef4444" stroke-width="1.5" />
+              <circle cx="20" cy="20" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+              <circle cx="40" cy="10" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+              <circle cx="60" cy="25" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
+              <circle cx="50" cy="50" r="3" fill="#f59e0b" />
+            </svg>
+          </div>
+          <div class="course-info">
+            <span class="course-code" style="color: #64748b; font-family: Georgia, serif;">POSTECH</span>
+            <h3 class="course-name">Introduction to Modern Combinatorial Optimization</h3>
+            <p class="course-history">Winter Lecture Series 2025</p>
+          </div>
+          <span class="arrow-icon">▼</span>
+        </div>
+        <div class="course-detail">
+          <div class="detail-content">
+            <h5>Course Description</h5>
+            <p>Special winter lecture series covering polyhedral combinatorics and cutting plane methods.</p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- SECTION 5: CV -->
@@ -444,24 +762,20 @@
 
   <!-- Interactive JavaScript -->
   <script>
-    // 1. Navigation Controller (SPA Router)
+    // 1. Navigation Controller
     function navigateTo(event, sectionId) {
-      // 브라우저 기본 해시 이동(#)으로 인한 스크롤 튀김 방지
       if (event) {
         event.preventDefault();
       }
 
-      // 모든 섹션 숨기기
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
-      // 클릭한 섹션 표시하기
       const targetSection = document.getElementById(sectionId);
       if (targetSection) {
         targetSection.classList.add('active');
       }
 
-      // 네비게이션 메뉴 활성화(active) 클래스 변경
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => {
         if (link.getAttribute('data-section') === sectionId) {
@@ -471,10 +785,8 @@
         }
       });
 
-      // 탭 전환 시 화면 맨 위로 스크롤 이동
       window.scrollTo(0, 0);
 
-      // URL 주소 업데이트 (화면 튀김 없이 URL만 변경)
       if (history.pushState) {
         history.pushState(null, null, '#' + sectionId);
       } else {
@@ -504,9 +816,14 @@
       });
     }
 
-    // 3. 네비게이션 HTML 클릭 이벤트 연결 보완
+    // 3. Course Accordion Toggle
+    function toggleCourse(cardElement) {
+      cardElement.classList.toggle('active');
+    }
+
+    // 4. Initialize Event Listeners
     document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.nav-link, .site-title');
+      const links = document.querySelectorAll('.nav-link, .site-title, .btn[data-section]');
       links.forEach(link => {
         link.addEventListener('click', (e) => {
           const sectionId = link.getAttribute('data-section') || 'home';
@@ -514,7 +831,6 @@
         });
       });
 
-      // 페이지 첫 진입 시 주소창 해시(#) 확인 후 이동
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
         navigateTo(null, hash);
@@ -523,7 +839,6 @@
       }
     });
 
-    // 뒤로가기/앞으로가기 버튼 대응
     window.addEventListener('popstate', () => {
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
