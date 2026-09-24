@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최유진 (Eugene Choi) - Home</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 2rem 1rem 1rem; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: #222; }
+        .menu a { margin-left: 1.2rem; color: #555; font-size: 0.95rem; }
+        .menu a.active { font-weight: bold; border-bottom: 2px solid #0366d6; padding-bottom: 2px; }
+
+        /* Main Profile Header */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .profile-header { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: flex-start; }
+        .profile-img { width: 180px; height: 220px; object-fit: cover; border-radius: 8px; background: #eee; flex-shrink: 0; }
+        .profile-info h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .profile-info p { margin-bottom: 0.4rem; color: #555; font-size: 0.95rem; }
+        .cv-btn { display: inline-block; margin-top: 1rem; padding: 6px 14px; border: 1px solid #ccc; border-radius: 20px; font-size: 0.85rem; color: #444; }
+
+        /* Content Grid */
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; }
+        .section-title { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+        .news-card { background: #f8f9fa; border-radius: 8px; padding: 1.2rem; }
+        .news-item { margin-bottom: 1rem; font-size: 0.88rem; }
+        .news-date { font-size: 0.75rem; color: #777; font-weight: bold; text-transform: uppercase; }
+
+        @media (max-width: 650px) {
+            .profile-header { flex-direction: column; }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 메뉴 -->
+    <nav>
+        <div class="logo">Eugene Choi</div>
+        <div class="menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Publications</a>
+            <a href="#">Projects</a>
+            <a href="#">Teaching</a>
+            <a href="#">CV</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 프로필 섹션 -->
+        <div class="profile-header">
+            <!-- 사진이 들어갈 위치입니다. 나중에 본인 사진으로 대체할 수 있습니다. -->
+            <img src="https://via.placeholder.com/180x220" alt="Profile" class="profile-img">
+            <div class="profile-info">
+                <h1>Eugene Choi</h1>
+                <p><b>Assistant Professor</b>, Department of Computer Science</p>
+                <p>Seoul National University</p>
+                <p>Office: Building 301, Room 402</p>
+                <p>E-mail: eugene [at] snu [dot] ac [dot] kr</p>
+                <a href="#" class="cv-btn">CV (pdf)</a>
+            </div>
+        </div>
+
+        <!-- 본문 2컬럼 레이아웃 -->
+        <div class="content-grid">
+            <!-- 좌측: About 섹션 -->
+            <div>
+                <h2 class="section-title">About</h2>
+                <p>안녕하세요! 여기에 본인의 소개글을 적으시면 됩니다. 전공 분야, 관심 연구 주제, 주요 경력 등을 자유롭게 서술해보세요.</p>
+                <br>
+                <p>I am an assistant professor at Seoul National University. My research interests include artificial intelligence, machine learning, and data science.</p>
+            </div>
+
+            <!-- 우측: News 사이드바 -->
+            <div>
+                <div class="news-card">
+                    <h2 class="section-title" style="border:none;">News</h2>
+                    <div class="news-item">
+                        <div class="news-date">SEP 2026</div>
+                        <p>Personal website launched on GitHub Pages!</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">AUG 2026</div>
+                        <p>New paper accepted at Conference 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
