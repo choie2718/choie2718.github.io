@@ -269,6 +269,7 @@
     .badge-preprint { background: #e0f2fe; color: #0369a1; }
     .badge-journal { background: #dcfce7; color: #15803d; }
     .badge-conference { background: #fef3c7; color: #b45309; }
+    .badge-gray { background: #e2e8f0; color: #334155; }
 
     .venue-name {
       font-weight: 600;
@@ -288,7 +289,7 @@
     }
 
     /* =========================================
-       Teaching Section Styles (Accordion Cards)
+       Teaching Section Styles 
        ========================================= */
     .institution-title {
       font-family: Georgia, serif;
@@ -408,23 +409,151 @@
       line-height: 1.5;
     }
 
-    .detail-content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .detail-content li {
-      margin-bottom: 0.5rem;
+    /* =========================================
+       Course Detail Page Styles (New)
+       ========================================= */
+    .breadcrumb {
       font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
     }
-
-    .detail-content a {
+    
+    .breadcrumb a {
       color: var(--primary-color);
       text-decoration: none;
+      cursor: pointer;
     }
-
-    .detail-content a:hover {
+    
+    .breadcrumb a:hover {
       text-decoration: underline;
+    }
+    
+    .course-hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8fafc; /* 연한 회색 배경 */
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      gap: 30px;
+    }
+    
+    .course-hero-content h1 {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      margin: 15px 0 10px;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+    
+    .course-hero-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    
+    .course-hero-img {
+      width: 220px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      background: white;
+    }
+    
+    .course-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 50px;
+    }
+    
+    .course-description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      color: #374151;
+    }
+    
+    .course-main h2 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      font-weight: normal;
+    }
+    
+    .lecture-list {
+      list-style: none;
+    }
+    
+    .lecture-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border-color);
+      gap: 15px;
+    }
+    
+    .lec-num {
+      color: #9ca3af;
+      font-size: 1rem;
+      min-width: 25px;
+      padding-top: 2px;
+    }
+    
+    .lec-date {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      min-width: 80px;
+      padding-top: 3px;
+    }
+    
+    .lec-topic {
+      flex: 1;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+    
+    .lec-badge {
+      background-color: #e0f2fe;
+      color: #1e3a8a;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-top: 2px;
+    }
+    
+    .lec-badge:hover {
+      background-color: #bae6fd;
+    }
+    
+    .instructor-box {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      background: white;
+      font-size: 0.95rem;
+    }
+    
+    .instructor-box p {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+    
+    .instructor-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .instructor-box a {
+      color: var(--primary-color);
+      text-decoration: none;
     }
 
     /* Footer */
@@ -439,31 +568,14 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .profile-grid {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-      }
-      .course-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .course-thumb {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-      }
-      .arrow-icon {
-        position: absolute;
-        right: 1.5rem;
-        top: 1.5rem;
-      }
-      .course-card {
-        position: relative;
-      }
+      .profile-grid { grid-template-columns: 1fr; }
+      header { flex-direction: column; gap: 15px; align-items: flex-start; }
+      
+      .course-hero { flex-direction: column; align-items: flex-start; }
+      .course-hero-img { width: 100%; aspect-ratio: 16/9; }
+      .course-body-grid { grid-template-columns: 1fr; }
+      .lecture-item { flex-wrap: wrap; }
+      .lec-badge { margin-left: 120px; }
     }
   </style>
 </head>
@@ -471,7 +583,6 @@
 
   <div class="container">
     <!-- Navigation Header -->
-    <!-- 수정됨: inline onclick 제거 및 data-section 속성만 유지하여 스크립트 충돌 방지 -->
     <header>
       <a href="#home" class="site-title" data-section="home">Eugene Choi</a>
       <nav>
@@ -528,22 +639,19 @@
       </div>
 
       <div id="pub-list">
-        <!-- Item 1 -->
         <div class="pub-item" data-category="preprint">
           <div class="pub-number">36.</div>
           <div class="pub-content">
-            <!-- 1. 논문 제목 클릭 시 PDF 열기 -->
             <a href="poincare_proof.pdf" target="_blank" class="pub-title">Proof of the Poincaré Conjecture Using Ricci Flow</a>
             <div class="pub-authors">Eugene Choi*</div>
             <div class="pub-meta">
               <span class="badge badge-preprint">PREPRINT</span>
               <span class="venue-name">arXiv</span> · March 2023
-              <!-- 2. 하단 링크 버튼 클릭 시 PDF 열기 -->
               <a href="Choi's Proof of the Poincaré Conjecture.pdf" target="_blank" class="link-badge">pdf</a>
             </div>
           </div>
         </div>
-  
+      </div>
     </section>
 
     <!-- SECTION 3: PROJECTS -->
@@ -551,30 +659,22 @@
       <h1 class="section-title">Projects</h1>
       <p class="subtext">Research grants and industry collaborations</p>
       
-      <!-- Flexbox를 사용하여 3단(좌/중/우)으로 배치 -->
       <div class="pub-item" style="display: flex; align-items: center; gap: 30px; padding: 20px 0; border-bottom: 1px solid #e5e7eb;">
-        
-        <!-- 1. 좌측 영역 (날짜 및 상태 배지) -->
         <div class="pub-meta-left" style="min-width: 130px;">
           <div style="font-size: 1.25rem; color: #374151; margin-bottom: 8px;">2026 – 2027</div>
           <span class="badge badge-journal" style="background: #e0e7ff; color: #1e40af; border: 1px solid #c7d2fe; padding: 4px 12px;">ONGOING</span>
         </div>
-
-        <!-- 2. 중앙 영역 (프로젝트 제목 및 소속) -->
         <div class="pub-content" style="flex: 1;">
           <div class="pub-title" style="font-size: 1.15rem; font-weight: 600; color: #1f2937; margin-bottom: 4px;">NON-COMMUTATIVE DYNAMICS ON MANIFOLDS</div>
           <p style="font-size: 0.95rem; color: #6b7280;">Munjeong High School(MHS)</p>
         </div>
-
-        <!-- 3. 우측 영역 (이미지) -->
         <div class="pub-image" style="flex-shrink: 0;">
-          <!-- src 속성에 실제 이미지 경로를 넣어주세요 -->
           <img src="Chaos System.png" alt="Project Image" style="width: 240px; height: 130px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb;">
         </div>
-        
       </div>
     </section>
-    <!-- SECTION 4: TEACHING -->
+
+    <!-- SECTION 4: TEACHING LIST -->
     <section id="teaching" class="page-section">
       <h1 class="section-title">Teaching</h1>
       <p class="subtext">Course pages with lecture notes, syllabi, and assignments.</p>
@@ -582,10 +682,10 @@
       <!-- 1. Seoul National University -->
       <h2 class="institution-title">Seoul National University</h2>
       
-      <div class="course-card" onclick="toggleCourse(this)">
+      <!-- 수정됨: 새로운 상세 페이지로 이동하도록 onclick 변경 -->
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-ma1407')">
         <div class="course-header">
           <div class="course-thumb">
-            <!-- 네트워크 노드 형태의 SVG 썸네일 -->
             <svg viewBox="0 0 100 65" class="thumb-svg">
               <rect width="100" height="65" fill="#f8fafc" />
               <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
@@ -604,25 +704,13 @@
             <p class="course-history"><strong>Fall 2026</strong> Mathematical Foundations of Modern Artificial Intelligence</p>
             <p class="course-history"><strong>Fall 2025</strong> Design and Analysis of Algorithms and Optimization Methods</p>
           </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>This course covers the mathematical foundations of modern artificial intelligence and machine learning algorithms, focusing on optimization theories and deep learning mathematics.</p>
-            <h5>Resources</h5>
-            <ul>
-              <li><a href="#" onclick="event.stopPropagation();">📄 Syllabus (PDF)</a></li>
-              <li><a href="#" onclick="event.stopPropagation();">📚 Lecture Notes</a></li>
-            </ul>
-          </div>
         </div>
       </div>
 
+      <!-- 나머지 강의들은 기존처럼 토글 형태 유지 -->
       <div class="course-card" onclick="toggleCourse(this)">
         <div class="course-header">
           <div class="course-thumb">
-            <!-- 3D 곡면 형태의 SVG 썸네일 -->
             <svg viewBox="0 0 100 65" class="thumb-svg">
               <rect width="100" height="65" fill="#f8fafc" />
               <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
@@ -727,7 +815,92 @@
           </div>
         </div>
       </div>
+    </section>
 
+    <!-- SECTION 4.1: COURSE DETAIL PAGE (NEW) -->
+    <section id="course-detail-ma1407" class="page-section">
+      <div class="breadcrumb">
+        <a href="#teaching" onclick="navigateTo(event, 'teaching')">Teaching</a> / Seoul National University
+      </div>
+      
+      <div class="course-hero">
+        <div class="course-hero-content">
+          <span class="badge badge-gray">Fall 2026</span>
+          <h1>MA1407.000500: Mathematical Algorithms II</h1>
+          <p>Mathematical Foundations of Modern Artificial Intelligence</p>
+        </div>
+        <div class="course-hero-img">
+          <!-- 썸네일 SVG -->
+          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
+            <rect width="100" height="65" fill="#f8fafc" />
+            <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
+            <line x1="20" y1="32" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
+            <line x1="50" y1="15" x2="80" y2="32" stroke="#cbd5e1" stroke-width="1.5" />
+            <line x1="50" y1="50" x2="80" y2="32" stroke="#fca5a5" stroke-width="1.5" />
+            <circle cx="20" cy="32" r="4" fill="#818cf8" />
+            <circle cx="50" cy="15" r="4" fill="#c084fc" />
+            <circle cx="50" cy="50" r="4" fill="#6366f1" />
+            <circle cx="80" cy="32" r="4" fill="#f87171" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="course-body-grid">
+        <!-- 왼쪽 내용 영역 -->
+        <div class="course-main">
+          <p class="course-description">
+            Optimization, the process of finding the best solution among a set of alternatives, lies at the heart of modern data-driven decision-making. This course explores the fundamental principles, algorithms, and applications of mathematical optimization, covering convex optimization, nonconvex optimization, minimax optimization, submodular optimization, online learning, and online reinforcement learning. There are no formal prerequisites, but basic knowledge of mathematical optimization and convex analysis is assumed.
+          </p>
+
+          <h2>Lecture notes</h2>
+          <ul class="lecture-list">
+            <li class="lecture-item">
+              <div class="lec-num">1</div>
+              <div class="lec-date">Tue 9/02</div>
+              <div class="lec-topic">Introduction to optimization, optimization for machine learning</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">2</div>
+              <div class="lec-date">Thu 9/04</div>
+              <div class="lec-topic">Convex sets, convex functions, operations preserving convexity, first- and second-order characterizations of convex functions</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">3</div>
+              <div class="lec-date">Tue 9/09</div>
+              <div class="lec-topic">Convex optimization problems, approximate optimality and oracle complexity, classes of convex optimization problems</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">4</div>
+              <div class="lec-date">Thu 9/11</div>
+              <div class="lec-topic">Conic duality, second-order cone programming, optimality conditions for convex minimization</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">5</div>
+              <div class="lec-date">Tue 9/16</div>
+              <div class="lec-topic">Subgradients and the subgradient method, gradient descent for smooth functions</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">6</div>
+              <div class="lec-date">Thu 9/18</div>
+              <div class="lec-topic">Proximal gradient descent, proximal operators, LASSO and FISTA</div>
+              <a href="#" class="lec-badge">note</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 오른쪽 사이드바 (강사 정보) -->
+        <div class="course-sidebar">
+          <div class="instructor-box">
+            <p><strong>Instructor:</strong> Eugene Choi (Building 301, Room 402)</p>
+            <p><strong>Email:</strong> eugene [at] snu [dot] ac [dot] kr</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECTION 5: CV -->
@@ -761,7 +934,9 @@
 
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => {
-        if (link.getAttribute('data-section') === sectionId) {
+        // 상세페이지에 있을 경우 상단 Navigation은 'Teaching' 탭을 활성화 상태로 유지
+        if (link.getAttribute('data-section') === sectionId || 
+           (sectionId.includes('course-detail') && link.getAttribute('data-section') === 'teaching')) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
