@@ -383,12 +383,13 @@
     .course-detail {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
+      /* 높이를 여유있게 잡아 리스트가 길어져도 잘리지 않도록 설정 */
+      transition: max-height 0.4s ease, opacity 0.4s ease;
       opacity: 0;
     }
 
     .course-card.active .course-detail {
-      max-height: 400px;
+      max-height: 1200px; 
       opacity: 1;
       border-top: 1px solid var(--border-color);
       margin-top: 1.25rem;
@@ -408,24 +409,78 @@
       line-height: 1.5;
     }
 
-    .detail-content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .detail-content li {
+    /* =========================================
+       Lecture Notes List Styles 
+       ========================================= */
+    .lecture-section-title {
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: normal;
+      margin-top: 2rem;
       margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      color: var(--text-main);
     }
 
-    .detail-content a {
+    .lecture-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .lecture-row:last-child {
+      border-bottom: none;
+    }
+
+    .lecture-info-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+    }
+
+    .lecture-num {
+      color: var(--text-muted);
+      width: 20px;
+      font-size: 0.95rem;
+    }
+
+    .lecture-date {
       color: var(--primary-color);
-      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      width: 80px;
     }
 
-    .detail-content a:hover {
-      text-decoration: underline;
+    .lecture-title {
+      color: var(--text-main);
+      font-size: 0.95rem;
     }
+
+    .lecture-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lecture-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      background: #eff6ff; /* 옅은 파란색 기본 배경 */
+      color: #1e40af;      /* 짙은 파란색 텍스트 */
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .lecture-badge:hover {
+      background: #1e40af; /* 마우스 오버시 짙은 파란색 배경 */
+      color: #ffffff;      /* 마우스 오버시 흰색 텍스트 */
+    }
+
 
     /* Footer */
     footer {
@@ -464,6 +519,14 @@
       .course-card {
         position: relative;
       }
+      .lecture-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .lecture-actions {
+        margin-left: 35px;
+      }
     }
   </style>
 </head>
@@ -471,7 +534,6 @@
 
   <div class="container">
     <!-- Navigation Header -->
-    <!-- 수정됨: inline onclick 제거 및 data-section 속성만 유지하여 스크립트 충돌 방지 -->
     <header>
       <a href="#home" class="site-title" data-section="home">Eugene Choi</a>
       <nav>
@@ -580,7 +642,6 @@
       
       <div class="pub-item">
         <div class="pub-content">
-          <!-- 수정됨: 링크가 아닌 단순 제목(div/span)으로 변경하여 최상단으로 튕기는 현상 원천 차단 -->
           <div class="pub-title" style="font-size: 1.1rem; margin-bottom: 4px;">Center for Foundations of Mathematical Algorithms and Security</div>
           <p style="font-size: 0.9rem; color: #4b5563;">Science Research Center (SRC) · National Research Foundation of Korea (NRF)</p>
           <div class="pub-meta" style="margin-top: 10px;">
@@ -602,7 +663,6 @@
       <div class="course-card" onclick="toggleCourse(this)">
         <div class="course-header">
           <div class="course-thumb">
-            <!-- 네트워크 노드 형태의 SVG 썸네일 -->
             <svg viewBox="0 0 100 65" class="thumb-svg">
               <rect width="100" height="65" fill="#f8fafc" />
               <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
@@ -619,7 +679,6 @@
             <span class="course-code">MA1407.000500</span>
             <h3 class="course-name">Mathematical Algorithms II</h3>
             <p class="course-history"><strong>Fall 2026</strong> Mathematical Foundations of Modern Artificial Intelligence</p>
-            <p class="course-history"><strong>Fall 2025</strong> Design and Analysis of Algorithms and Optimization Methods</p>
           </div>
           <span class="arrow-icon">▼</span>
         </div>
@@ -627,11 +686,67 @@
           <div class="detail-content">
             <h5>Course Description</h5>
             <p>This course covers the mathematical foundations of modern artificial intelligence and machine learning algorithms, focusing on optimization theories and deep learning mathematics.</p>
-            <h5>Resources</h5>
-            <ul>
-              <li><a href="#" onclick="event.stopPropagation();">📄 Syllabus (PDF)</a></li>
-              <li><a href="#" onclick="event.stopPropagation();">📚 Lecture Notes</a></li>
-            </ul>
+            
+            <a href="dummy_syllabus.pdf" target="_blank" style="color: var(--primary-color); font-weight: 500; font-size: 0.95rem; text-decoration: none;" onclick="event.stopPropagation();">
+              📄 Syllabus (PDF)
+            </a>
+
+            <!-- Lecture Notes Interactive List -->
+            <h3 class="lecture-section-title">Lecture notes</h3>
+            <div class="lecture-list">
+              
+              <!-- Lecture 1 -->
+              <div class="lecture-row">
+                <div class="lecture-info-wrapper">
+                  <span class="lecture-num">1</span>
+                  <span class="lecture-date">Mon 2/26</span>
+                  <span class="lecture-title">Introduction</span>
+                </div>
+                <div class="lecture-actions">
+                  <a href="dummy_lecture1.pdf" target="_blank" class="lecture-badge" onclick="event.stopPropagation();">lecture note</a>
+                </div>
+              </div>
+              
+              <!-- Lecture 2 -->
+              <div class="lecture-row">
+                <div class="lecture-info-wrapper">
+                  <span class="lecture-num">2</span>
+                  <span class="lecture-date">Wed 2/28</span>
+                  <span class="lecture-title">Convex optimization basics</span>
+                </div>
+                <div class="lecture-actions">
+                  <a href="dummy_lecture2.pdf" target="_blank" class="lecture-badge" onclick="event.stopPropagation();">lecture note</a>
+                </div>
+              </div>
+
+              <!-- Lecture 3 -->
+              <div class="lecture-row">
+                <div class="lecture-info-wrapper">
+                  <span class="lecture-num">3</span>
+                  <span class="lecture-date">Mon 3/04</span>
+                  <span class="lecture-title">Introduction to gradient descent</span>
+                </div>
+                <div class="lecture-actions">
+                  <a href="dummy_lecture3.pdf" target="_blank" class="lecture-badge" onclick="event.stopPropagation();">lecture note</a>
+                  <a href="dummy_code3.zip" target="_blank" class="lecture-badge" onclick="event.stopPropagation();">code</a>
+                </div>
+              </div>
+
+              <!-- Lecture 4 -->
+              <div class="lecture-row">
+                <div class="lecture-info-wrapper">
+                  <span class="lecture-num">4</span>
+                  <span class="lecture-date">Wed 3/06</span>
+                  <span class="lecture-title">Gradient descent for smooth functions, adaptive gradient (AdaGrad)</span>
+                </div>
+                <div class="lecture-actions">
+                  <a href="dummy_lecture4.pdf" target="_blank" class="lecture-badge" onclick="event.stopPropagation();">lecture note</a>
+                </div>
+              </div>
+
+            </div>
+            <!-- End of Lecture Notes List -->
+
           </div>
         </div>
       </div>
@@ -639,7 +754,6 @@
       <div class="course-card" onclick="toggleCourse(this)">
         <div class="course-header">
           <div class="course-thumb">
-            <!-- 3D 곡면 형태의 SVG 썸네일 -->
             <svg viewBox="0 0 100 65" class="thumb-svg">
               <rect width="100" height="65" fill="#f8fafc" />
               <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
@@ -662,89 +776,7 @@
           </div>
         </div>
       </div>
-
-      <!-- 2. KAIST -->
-      <h2 class="institution-title">KAIST</h2>
       
-      <div class="course-card" onclick="toggleCourse(this)">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <polygon points="30,50 30,20 60,15 80,35 70,50" fill="#a7f3d0" opacity="0.6" stroke="#059669" stroke-width="1" />
-              <line x1="10" y1="30" x2="90" y2="10" stroke="#fbbf24" stroke-width="1" />
-              <circle cx="60" cy="15" r="3" fill="#f59e0b" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code">IE331</span>
-            <h3 class="course-name">Operations Research: Optimization</h3>
-            <p class="course-history">Spring 2023, 2024</p>
-          </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Fundamentals of linear programming, simplex algorithms, and decision modeling.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card" onclick="toggleCourse(this)">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <path d="M 15 15 Q 50 70 85 15" fill="#ddd6fe" opacity="0.6" stroke="#7c3aed" stroke-width="1.5" />
-              <circle cx="50" cy="43" r="3" fill="#f87171" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code">IE539</span>
-            <h3 class="course-name">Convex Optimization</h3>
-            <p class="course-history">Fall 2022, 2023, 2024</p>
-          </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Advanced topics in convex sets, functions, and optimization problems with applications in engineering.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. POSTECH -->
-      <h2 class="institution-title">Lecture series</h2>
-      
-      <div class="course-card" onclick="toggleCourse(this)">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <path d="M 20 20 L 40 10 L 60 25 L 80 15 L 75 45 L 50 50 L 30 40 Z" fill="none" stroke="#ef4444" stroke-width="1.5" />
-              <circle cx="20" cy="20" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="40" cy="10" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="60" cy="25" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="50" cy="50" r="3" fill="#f59e0b" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code" style="color: #64748b; font-family: Georgia, serif;">POSTECH</span>
-            <h3 class="course-name">Introduction to Modern Combinatorial Optimization</h3>
-            <p class="course-history">Winter Lecture Series 2025</p>
-          </div>
-          <span class="arrow-icon">▼</span>
-        </div>
-        <div class="course-detail">
-          <div class="detail-content">
-            <h5>Course Description</h5>
-            <p>Special winter lecture series covering polyhedral combinatorics and cutting plane methods.</p>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- SECTION 5: CV -->
