@@ -445,18 +445,23 @@
   <!-- Interactive JavaScript -->
   <script>
     // 1. Navigation Controller (SPA Router)
-    function navigateTo(sectionId) {
-      // Hide all sections
+    function navigateTo(event, sectionId) {
+      // 브라우저 기본 해시 이동(#)으로 인한 스크롤 튀김 방지
+      if (event) {
+        event.preventDefault();
+      }
+
+      // 모든 섹션 숨기기
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
-      // Show target section
+      // 클릭한 섹션 표시하기
       const targetSection = document.getElementById(sectionId);
       if (targetSection) {
         targetSection.classList.add('active');
       }
 
-      // Update Active Nav Link
+      // 네비게이션 메뉴 활성화(active) 클래스 변경
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => {
         if (link.getAttribute('data-section') === sectionId) {
@@ -466,13 +471,19 @@
         }
       });
 
-      // Update URL Hash
-      window.location.hash = sectionId;
+      // 탭 전환 시 화면 맨 위로 스크롤 이동
+      window.scrollTo(0, 0);
+
+      // URL 주소 업데이트 (화면 튀김 없이 URL만 변경)
+      if (history.pushState) {
+        history.pushState(null, null, '#' + sectionId);
+      } else {
+        location.hash = sectionId;
+      }
     }
 
     // 2. Publication Filter Controller
     function filterPublications(category) {
-      // Update Filter Button Active Style
       const filterBtns = document.querySelectorAll('.filter-btn');
       filterBtns.forEach(btn => {
         if (btn.getAttribute('data-filter') === category) {
@@ -482,7 +493,6 @@
         }
       });
 
-      // Show/Hide Publication Items
       const pubItems = document.querySelectorAll('.pub-item');
       pubItems.forEach(item => {
         const itemCategory = item.getAttribute('data-category');
@@ -494,20 +504,32 @@
       });
     }
 
-    // 3. Handle Browser Back/Forward and Initial Load
-    window.addEventListener('load', () => {
+    // 3. 네비게이션 HTML 클릭 이벤트 연결 보완
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.nav-link, .site-title');
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const sectionId = link.getAttribute('data-section') || 'home';
+          navigateTo(e, sectionId);
+        });
+      });
+
+      // 페이지 첫 진입 시 주소창 해시(#) 확인 후 이동
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
-        navigateTo(hash);
+        navigateTo(null, hash);
       } else {
-        navigateTo('home');
+        navigateTo(null, 'home');
       }
     });
 
-    window.addEventListener('hashchange', () => {
+    // 뒤로가기/앞으로가기 버튼 대응
+    window.addEventListener('popstate', () => {
       const hash = window.location.hash.replace('#', '');
       if (hash && document.getElementById(hash)) {
-        navigateTo(hash);
+        navigateTo(null, hash);
+      } else {
+        navigateTo(null, 'home');
       }
     });
   </script>
