@@ -478,27 +478,6 @@
       min-height: 180px;
     }
 
-    .course-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .course-card-button {
-      width: 100%;
-      text-align: left;
-      color: inherit;
-      font: inherit;
-    }
-
-    .course-card-button .course-name,
-    .course-card-button .course-history {
-      display: block;
-    }
-
-    .course-card-button .arrow-icon {
-      margin-left: auto;
-    }
-
     .lec-badge.unavailable {
       background-color: #f1f5f9;
       color: #64748b;
@@ -761,379 +740,859 @@ Data Projection: A Sheaf Cohomology Approach</a>
 <!-- SECTION 4: FIELDS LIST -->
     <section id="fields" class="page-section">
       <h1 class="section-title">Fields</h1>
-      <p class="subtext">Course pages with lecture notes, syllabi, and assignments.</p>
-      
-      <div class="course-card" onclick="navigateTo(event, 'course-detail-ma1407')">
+      <p class="subtext">Lecture notes and openly shared course materials.</p>
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-number-theory')">
         <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
-              <line x1="20" y1="32" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
-              <line x1="50" y1="15" x2="80" y2="32" stroke="#cbd5e1" stroke-width="1.5" />
-              <line x1="50" y1="50" x2="80" y2="32" stroke="#fca5a5" stroke-width="1.5" />
-              <circle cx="20" cy="32" r="4" fill="#818cf8" />
-              <circle cx="50" cy="15" r="4" fill="#c084fc" />
-              <circle cx="50" cy="50" r="4" fill="#6366f1" />
-              <circle cx="80" cy="32" r="4" fill="#f87171" />
-            </svg>
-          </div>
+          <div class="course-thumb"><img src="Number Theory1.jpg" alt="Number Theory"></div>
           <div class="course-info">
-            <span class="course-code">MA18.745</span>
-            <h3 class="course-name">Lie Groups and Lie Algebras I</h3>
-            <p class="course-history"><strong>Fall 2020</strong></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card" onclick="navigateTo(event, 'course-detail-snu3341')">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="E8_root_system.png">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
-              <path d="M 10 40 Q 50 10 90 40" fill="none" stroke="#3b82f6" stroke-width="1" />
-              <circle cx="50" cy="40" r="3" fill="#f59e0b" />
-              <line x1="20" y1="40" x2="50" y2="40" stroke="#f87171" stroke-width="1.5" stroke-dasharray="2,2" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code">3341.454</span>
-            <h3 class="course-name">Algebraic Combinatorics</h3>
-            <p class="course-history"><strong>Spring 2026</strong></p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="course-card" onclick="navigateTo(event, 'course-detail-ie331')">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <polygon points="30,50 30,20 60,15 80,35 70,50" fill="#a7f3d0" opacity="0.6" stroke="#059669" stroke-width="1" />
-              <line x1="10" y1="30" x2="90" y2="10" stroke="#fbbf24" stroke-width="1" />
-              <circle cx="60" cy="15" r="3" fill="#f59e0b" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code">IE331</span>
-            <h3 class="course-name">Algebraic Geometry</h3>
-            <p class="course-history">Spring 2023, 2024</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card" onclick="navigateTo(event, 'course-detail-ie539')">
-        <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <path d="M 15 15 Q 50 70 85 15" fill="#ddd6fe" opacity="0.6" stroke="#7c3aed" stroke-width="1.5" />
-              <circle cx="50" cy="43" r="3" fill="#f87171" />
-            </svg>
-          </div>
-          <div class="course-info">
-            <span class="course-code">IE539</span>
+            <span class="course-code">Number Theory</span>
             <h3 class="course-name">Number Theory</h3>
-            <p class="course-history">Fall 2022, 2023, 2024</p>
+            <p class="course-history">28 lectures</p>
           </div>
+          <span class="arrow-icon">v</span>
         </div>
       </div>
-      
-      <div class="course-card" onclick="navigateTo(event, 'course-detail-postech')">
+
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-probability-theory')">
         <div class="course-header">
-          <div class="course-thumb">
-            <svg viewBox="0 0 100 65" class="thumb-svg">
-              <rect width="100" height="65" fill="#f8fafc" />
-              <path d="M 20 20 L 40 10 L 60 25 L 80 15 L 75 45 L 50 50 L 30 40 Z" fill="none" stroke="#ef4444" stroke-width="1.5" />
-              <circle cx="20" cy="20" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="40" cy="10" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="60" cy="25" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-              <circle cx="50" cy="50" r="3" fill="#f59e0b" />
-            </svg>
-          </div>
+          <div class="course-thumb"><img src="Probability1.png" alt="Probability Theory"></div>
           <div class="course-info">
-            <span class="course-code" style="color: #64748b; font-family: Georgia, serif;">POSTECH</span>
+            <span class="course-code">Probability Theory</span>
             <h3 class="course-name">Probability Theory</h3>
-            <p class="course-history">Winter Lecture Series 2025</p>
+            <p class="course-history">28 lectures</p>
           </div>
+          <span class="arrow-icon">v</span>
+        </div>
+      </div>
+
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-algebraic-geometry')">
+        <div class="course-header">
+          <div class="course-thumb"><img src="Algebraic Geometry1.png" alt="Algebraic Geometry"></div>
+          <div class="course-info">
+            <span class="course-code">Algebraic Geometry</span>
+            <h3 class="course-name">Algebraic Geometry</h3>
+            <p class="course-history">28 lectures</p>
+          </div>
+          <span class="arrow-icon">v</span>
+        </div>
+      </div>
+
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-algebraic-combinatorics')">
+        <div class="course-header">
+          <div class="course-thumb"><img src="ACombin.webp" alt="Algebraic Combinatorics"></div>
+          <div class="course-info">
+            <span class="course-code">Algebraic Combinatorics</span>
+            <h3 class="course-name">Algebraic Combinatorics</h3>
+            <p class="course-history">28 lectures</p>
+          </div>
+          <span class="arrow-icon">v</span>
+        </div>
+      </div>
+
+      <div class="course-card" onclick="navigateTo(event, 'course-detail-lie-theory')">
+        <div class="course-header">
+          <div class="course-thumb"><img src="E8_root_system.png" alt="Lie Theory"></div>
+          <div class="course-info">
+            <span class="course-code">Lie Theory</span>
+            <h3 class="course-name">Lie Theory</h3>
+            <p class="course-history">28 lectures</p>
+          </div>
+          <span class="arrow-icon">v</span>
         </div>
       </div>
     </section>
 
-    <!-- =========================================
-         COURSE DETAIL PAGES
-         ========================================= -->
-
-    <!-- COURSE DETAIL 1: MA1407 (SNU) -->
-    <section id="course-detail-ma1407" class="page-section">
-      <div class="breadcrumb">
-        <a href="#fields" onclick="navigateTo(event, 'fields')">Learning</a>
-      </div>
-      
+    <section id="course-detail-number-theory" class="page-section">
+      <div class="breadcrumb"><a href="#fields" onclick="navigateTo(event, 'fields')">Fields</a></div>
       <div class="course-hero">
         <div class="course-hero-content">
-          <span class="badge badge-gray">Fall 2026</span>
-          <h1>MA1407.000500: Mathematical Algorithms II</h1>
-          <p>Mathematical Foundations of Modern Artificial Intelligence</p>
+          <span class="badge badge-gray">28 lectures</span>
+          <h1>Number Theory</h1>
+          <p>Openly shared lecture notes.</p>
         </div>
-        <div class="course-hero-img">
-          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
-            <rect width="100" height="65" fill="#f8fafc" />
-            <line x1="20" y1="32" x2="50" y2="15" stroke="#cbd5e1" stroke-width="1.5" />
-            <line x1="20" y1="32" x2="50" y2="50" stroke="#cbd5e1" stroke-width="1.5" />
-            <line x1="50" y1="15" x2="80" y2="32" stroke="#cbd5e1" stroke-width="1.5" />
-            <line x1="50" y1="50" x2="80" y2="32" stroke="#fca5a5" stroke-width="1.5" />
-            <circle cx="20" cy="32" r="4" fill="#818cf8" />
-            <circle cx="50" cy="15" r="4" fill="#c084fc" />
-            <circle cx="50" cy="50" r="4" fill="#6366f1" />
-            <circle cx="80" cy="32" r="4" fill="#f87171" />
-          </svg>
-        </div>
+        <div class="course-hero-img"><img src="Number Theory1.jpg" alt="Number Theory"></div>
       </div>
-
       <div class="course-body-grid">
         <div class="course-main">
-          <p class="course-description">
-            Optimization, the process of finding the best solution among a set of alternatives, lies at the heart of modern data-driven decision-making. This course explores the fundamental principles, algorithms, and applications of mathematical optimization, covering convex optimization, nonconvex optimization, minimax optimization, submodular optimization, online learning, and online reinforcement learning. There are no formal prerequisites, but basic knowledge of mathematical optimization and convex analysis is assumed.
-          </p>
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
               <div class="lec-num">1</div>
-              <div class="lec-date">Tue 9/02</div>
-              <div class="lec-topic">Introduction to optimization, optimization for machine learning</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 1</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="1">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">2</div>
-              <div class="lec-date">Thu 9/04</div>
-              <div class="lec-topic">Convex sets, convex functions, operations preserving convexity, first- and second-order characterizations of convex functions</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 2</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="2">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">3</div>
-              <div class="lec-date">Tue 9/09</div>
-              <div class="lec-topic">Convex optimization problems, approximate optimality and oracle complexity, classes of convex optimization problems</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 3</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="3">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">4</div>
-              <div class="lec-date">Thu 9/11</div>
-              <div class="lec-topic">Conic duality, second-order cone programming, optimality conditions for convex minimization</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 4</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="4">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">5</div>
-              <div class="lec-date">Tue 9/16</div>
-              <div class="lec-topic">Subgradients and the subgradient method, gradient descent for smooth functions</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 5</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="5">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">6</div>
-              <div class="lec-date">Thu 9/18</div>
-              <div class="lec-topic">Proximal gradient descent, proximal operators, LASSO and FISTA</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 6</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="6">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">7</div>
+              <div class="lec-topic">Lecture 7</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="7">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">8</div>
+              <div class="lec-topic">Lecture 8</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="8">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">9</div>
+              <div class="lec-topic">Lecture 9</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="9">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">10</div>
+              <div class="lec-topic">Lecture 10</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="10">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">11</div>
+              <div class="lec-topic">Lecture 11</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="11">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">12</div>
+              <div class="lec-topic">Lecture 12</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="12">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">13</div>
+              <div class="lec-topic">Lecture 13</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="13">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">14</div>
+              <div class="lec-topic">Lecture 14</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="14">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">15</div>
+              <div class="lec-topic">Lecture 15</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="15">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">16</div>
+              <div class="lec-topic">Lecture 16</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="16">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">17</div>
+              <div class="lec-topic">Lecture 17</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="17">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">18</div>
+              <div class="lec-topic">Lecture 18</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="18">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">19</div>
+              <div class="lec-topic">Lecture 19</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="19">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">20</div>
+              <div class="lec-topic">Lecture 20</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="20">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">21</div>
+              <div class="lec-topic">Lecture 21</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="21">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">22</div>
+              <div class="lec-topic">Lecture 22</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="22">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">23</div>
+              <div class="lec-topic">Lecture 23</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="23">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">24</div>
+              <div class="lec-topic">Lecture 24</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="24">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">25</div>
+              <div class="lec-topic">Lecture 25</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="25">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">26</div>
+              <div class="lec-topic">Lecture 26</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="26">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">27</div>
+              <div class="lec-topic">Lecture 27</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="27">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">28</div>
+              <div class="lec-topic">Lecture 28</div>
+              <span class="lec-badge unavailable" data-pdf-course="number-theory" data-pdf-lecture="28">PDF pending</span>
             </li>
           </ul>
-        </div>
-        <div class="course-sidebar">
-          <div class="instructor-box">
-            <p><strong>Instructor:</strong> Myung-ju Kang (27-409)</p>
-            <p><strong>Email:</strong> </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- COURSE DETAIL 2: SNU 3341.454 -->
-    <section id="course-detail-snu3341" class="page-section">
-      <div class="breadcrumb">
-        <a href="#fields" onclick="navigateTo(event, 'fields')">Learning</a>
-      </div>
-      
+    <section id="course-detail-probability-theory" class="page-section">
+      <div class="breadcrumb"><a href="#fields" onclick="navigateTo(event, 'fields')">Fields</a></div>
       <div class="course-hero">
         <div class="course-hero-content">
-          <span class="badge badge-gray">Spring 2026</span>
-          <h1>3341.454: Mathematical and Numerical Optimization</h1>
-          <p>Introduction to convex optimization and numerical methods</p>
+          <span class="badge badge-gray">28 lectures</span>
+          <h1>Probability Theory</h1>
+          <p>Openly shared lecture notes.</p>
         </div>
-        <div class="course-hero-img">
-          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
-            <rect width="100" height="65" fill="#f8fafc" />
-            <path d="M 10 40 Q 50 10 90 40 Q 50 70 10 40" fill="#93c5fd" opacity="0.5" />
-            <path d="M 10 40 Q 50 10 90 40" fill="none" stroke="#3b82f6" stroke-width="1" />
-            <circle cx="50" cy="40" r="3" fill="#f59e0b" />
-            <line x1="20" y1="40" x2="50" y2="40" stroke="#f87171" stroke-width="1.5" stroke-dasharray="2,2" />
-          </svg>
-        </div>
+        <div class="course-hero-img"><img src="Probability1.png" alt="Probability Theory"></div>
       </div>
-
       <div class="course-body-grid">
         <div class="course-main">
-          <p class="course-description">
-            Introduction to convex optimization, numerical methods, and algorithm implementation for solving real-world data problems. This course focuses on bridging the gap between mathematical theory and practical algorithmic implementations.
-          </p>
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
               <div class="lec-num">1</div>
-              <div class="lec-date">Week 1</div>
-              <div class="lec-topic">Overview of Numerical Optimization and Basic Matrix Algebra</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 1</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="1">PDF pending</span>
             </li>
             <li class="lecture-item">
               <div class="lec-num">2</div>
-              <div class="lec-date">Week 2</div>
-              <div class="lec-topic">Unconstrained Optimization: Line Search Methods</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 2</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="2">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">3</div>
+              <div class="lec-topic">Lecture 3</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="3">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">4</div>
+              <div class="lec-topic">Lecture 4</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="4">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">5</div>
+              <div class="lec-topic">Lecture 5</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="5">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">6</div>
+              <div class="lec-topic">Lecture 6</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="6">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">7</div>
+              <div class="lec-topic">Lecture 7</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="7">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">8</div>
+              <div class="lec-topic">Lecture 8</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="8">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">9</div>
+              <div class="lec-topic">Lecture 9</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="9">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">10</div>
+              <div class="lec-topic">Lecture 10</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="10">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">11</div>
+              <div class="lec-topic">Lecture 11</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="11">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">12</div>
+              <div class="lec-topic">Lecture 12</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="12">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">13</div>
+              <div class="lec-topic">Lecture 13</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="13">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">14</div>
+              <div class="lec-topic">Lecture 14</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="14">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">15</div>
+              <div class="lec-topic">Lecture 15</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="15">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">16</div>
+              <div class="lec-topic">Lecture 16</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="16">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">17</div>
+              <div class="lec-topic">Lecture 17</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="17">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">18</div>
+              <div class="lec-topic">Lecture 18</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="18">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">19</div>
+              <div class="lec-topic">Lecture 19</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="19">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">20</div>
+              <div class="lec-topic">Lecture 20</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="20">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">21</div>
+              <div class="lec-topic">Lecture 21</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="21">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">22</div>
+              <div class="lec-topic">Lecture 22</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="22">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">23</div>
+              <div class="lec-topic">Lecture 23</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="23">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">24</div>
+              <div class="lec-topic">Lecture 24</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="24">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">25</div>
+              <div class="lec-topic">Lecture 25</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="25">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">26</div>
+              <div class="lec-topic">Lecture 26</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="26">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">27</div>
+              <div class="lec-topic">Lecture 27</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="27">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">28</div>
+              <div class="lec-topic">Lecture 28</div>
+              <span class="lec-badge unavailable" data-pdf-course="probability-theory" data-pdf-lecture="28">PDF pending</span>
             </li>
           </ul>
-        </div>
-        <div class="course-sidebar">
-          <div class="instructor-box">
-            <p><strong>Instructor:</strong> Changkeun Oh (27-310)</p>
-            <p><strong>Email:</strong> </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- COURSE DETAIL 3: KAIST IE331 -->
-    <section id="course-detail-ie331" class="page-section">
-      <div class="breadcrumb">
-        <a href="#fields" onclick="navigateTo(event, 'fields')">Learning</a>
-      </div>
-      
+    <section id="course-detail-algebraic-geometry" class="page-section">
+      <div class="breadcrumb"><a href="#fields" onclick="navigateTo(event, 'fields')">Fields</a></div>
       <div class="course-hero">
         <div class="course-hero-content">
-          <span class="badge badge-gray">Spring 2024</span>
-          <h1>IE331: Operations Research: Optimization</h1>
-          <p>Fundamentals of linear programming and decision modeling</p>
+          <span class="badge badge-gray">28 lectures</span>
+          <h1>Algebraic Geometry</h1>
+          <p>Openly shared lecture notes.</p>
         </div>
-        <div class="course-hero-img">
-          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
-            <rect width="100" height="65" fill="#f8fafc" />
-            <polygon points="30,50 30,20 60,15 80,35 70,50" fill="#a7f3d0" opacity="0.6" stroke="#059669" stroke-width="1" />
-            <line x1="10" y1="30" x2="90" y2="10" stroke="#fbbf24" stroke-width="1" />
-            <circle cx="60" cy="15" r="3" fill="#f59e0b" />
-          </svg>
-        </div>
+        <div class="course-hero-img"><img src="Algebraic Geometry1.png" alt="Algebraic Geometry"></div>
       </div>
-
       <div class="course-body-grid">
         <div class="course-main">
-          <p class="course-description">
-            Fundamentals of linear programming, simplex algorithms, and decision modeling. Students will learn how to formulate real-world industrial engineering problems into mathematical models and solve them efficiently.
-          </p>
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
               <div class="lec-num">1</div>
-              <div class="lec-date">Week 1</div>
-              <div class="lec-topic">Introduction to Operations Research and Linear Programming Formulation</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 1</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="1">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">2</div>
+              <div class="lec-topic">Lecture 2</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="2">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">3</div>
+              <div class="lec-topic">Lecture 3</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="3">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">4</div>
+              <div class="lec-topic">Lecture 4</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="4">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">5</div>
+              <div class="lec-topic">Lecture 5</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="5">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">6</div>
+              <div class="lec-topic">Lecture 6</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="6">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">7</div>
+              <div class="lec-topic">Lecture 7</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="7">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">8</div>
+              <div class="lec-topic">Lecture 8</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="8">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">9</div>
+              <div class="lec-topic">Lecture 9</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="9">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">10</div>
+              <div class="lec-topic">Lecture 10</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="10">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">11</div>
+              <div class="lec-topic">Lecture 11</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="11">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">12</div>
+              <div class="lec-topic">Lecture 12</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="12">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">13</div>
+              <div class="lec-topic">Lecture 13</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="13">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">14</div>
+              <div class="lec-topic">Lecture 14</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="14">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">15</div>
+              <div class="lec-topic">Lecture 15</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="15">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">16</div>
+              <div class="lec-topic">Lecture 16</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="16">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">17</div>
+              <div class="lec-topic">Lecture 17</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="17">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">18</div>
+              <div class="lec-topic">Lecture 18</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="18">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">19</div>
+              <div class="lec-topic">Lecture 19</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="19">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">20</div>
+              <div class="lec-topic">Lecture 20</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="20">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">21</div>
+              <div class="lec-topic">Lecture 21</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="21">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">22</div>
+              <div class="lec-topic">Lecture 22</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="22">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">23</div>
+              <div class="lec-topic">Lecture 23</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="23">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">24</div>
+              <div class="lec-topic">Lecture 24</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="24">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">25</div>
+              <div class="lec-topic">Lecture 25</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="25">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">26</div>
+              <div class="lec-topic">Lecture 26</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="26">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">27</div>
+              <div class="lec-topic">Lecture 27</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="27">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">28</div>
+              <div class="lec-topic">Lecture 28</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-geometry" data-pdf-lecture="28">PDF pending</span>
             </li>
           </ul>
-        </div>
-        <div class="course-sidebar">
-          <div class="instructor-box">
-            <p><strong>Instructor:</strong> Philsang Yoo</p>
-            <p><strong>Email:</strong> </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- COURSE DETAIL 4: KAIST IE539 -->
-    <section id="course-detail-ie539" class="page-section">
-      <div class="breadcrumb">
-        <a href="#fields" onclick="navigateTo(event, 'fields')">Learning</a>
-      </div>
-      
+    <section id="course-detail-algebraic-combinatorics" class="page-section">
+      <div class="breadcrumb"><a href="#fields" onclick="navigateTo(event, 'fields')">Fields</a></div>
       <div class="course-hero">
         <div class="course-hero-content">
-          <span class="badge badge-gray">Fall 2024</span>
-          <h1>IE539: Convex Optimization</h1>
-          <p>Advanced topics in convex sets and functions</p>
+          <span class="badge badge-gray">28 lectures</span>
+          <h1>Algebraic Combinatorics</h1>
+          <p>Openly shared lecture notes.</p>
         </div>
-        <div class="course-hero-img">
-          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
-            <rect width="100" height="65" fill="#f8fafc" />
-            <path d="M 15 15 Q 50 70 85 15" fill="#ddd6fe" opacity="0.6" stroke="#7c3aed" stroke-width="1.5" />
-            <circle cx="50" cy="43" r="3" fill="#f87171" />
-          </svg>
-        </div>
+        <div class="course-hero-img"><img src="ACombin.webp" alt="Algebraic Combinatorics"></div>
       </div>
-
       <div class="course-body-grid">
         <div class="course-main">
-          <p class="course-description">
-            Advanced topics in convex sets, functions, and optimization problems with applications in engineering. Topics include duality theory, interior-point methods, and large-scale optimization techniques.
-          </p>
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
               <div class="lec-num">1</div>
-              <div class="lec-date">Week 1</div>
-              <div class="lec-topic">Convex Sets and Convex Functions Revisited</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 1</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="1">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">2</div>
+              <div class="lec-topic">Lecture 2</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="2">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">3</div>
+              <div class="lec-topic">Lecture 3</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="3">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">4</div>
+              <div class="lec-topic">Lecture 4</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="4">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">5</div>
+              <div class="lec-topic">Lecture 5</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="5">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">6</div>
+              <div class="lec-topic">Lecture 6</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="6">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">7</div>
+              <div class="lec-topic">Lecture 7</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="7">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">8</div>
+              <div class="lec-topic">Lecture 8</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="8">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">9</div>
+              <div class="lec-topic">Lecture 9</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="9">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">10</div>
+              <div class="lec-topic">Lecture 10</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="10">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">11</div>
+              <div class="lec-topic">Lecture 11</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="11">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">12</div>
+              <div class="lec-topic">Lecture 12</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="12">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">13</div>
+              <div class="lec-topic">Lecture 13</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="13">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">14</div>
+              <div class="lec-topic">Lecture 14</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="14">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">15</div>
+              <div class="lec-topic">Lecture 15</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="15">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">16</div>
+              <div class="lec-topic">Lecture 16</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="16">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">17</div>
+              <div class="lec-topic">Lecture 17</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="17">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">18</div>
+              <div class="lec-topic">Lecture 18</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="18">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">19</div>
+              <div class="lec-topic">Lecture 19</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="19">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">20</div>
+              <div class="lec-topic">Lecture 20</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="20">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">21</div>
+              <div class="lec-topic">Lecture 21</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="21">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">22</div>
+              <div class="lec-topic">Lecture 22</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="22">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">23</div>
+              <div class="lec-topic">Lecture 23</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="23">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">24</div>
+              <div class="lec-topic">Lecture 24</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="24">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">25</div>
+              <div class="lec-topic">Lecture 25</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="25">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">26</div>
+              <div class="lec-topic">Lecture 26</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="26">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">27</div>
+              <div class="lec-topic">Lecture 27</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="27">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">28</div>
+              <div class="lec-topic">Lecture 28</div>
+              <span class="lec-badge unavailable" data-pdf-course="algebraic-combinatorics" data-pdf-lecture="28">PDF pending</span>
             </li>
           </ul>
-        </div>
-        <div class="course-sidebar">
-          <div class="instructor-box">
-            <p><strong>Instructor:</strong> Sanghyuk Lee</p>
-            <p><strong>Email:</strong> </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- COURSE DETAIL 5: POSTECH -->
-    <section id="course-detail-postech" class="page-section">
-      <div class="breadcrumb">
-        <a href="#fields" onclick="navigateTo(event, 'fields')">Learning</a>
-      </div>
-      
+    <section id="course-detail-lie-theory" class="page-section">
+      <div class="breadcrumb"><a href="#fields" onclick="navigateTo(event, 'fields')">Fields</a></div>
       <div class="course-hero">
         <div class="course-hero-content">
-          <span class="badge badge-gray">Winter 2025</span>
-          <h1>Introduction to Modern Combinatorial Optimization</h1>
-          <p>Special winter lecture series</p>
+          <span class="badge badge-gray">28 lectures</span>
+          <h1>Lie Theory</h1>
+          <p>Openly shared lecture notes.</p>
         </div>
-        <div class="course-hero-img">
-          <svg viewBox="0 0 100 65" class="thumb-svg" style="width: 100%; height: 100%; display: block;">
-            <rect width="100" height="65" fill="#f8fafc" />
-            <path d="M 20 20 L 40 10 L 60 25 L 80 15 L 75 45 L 50 50 L 30 40 Z" fill="none" stroke="#ef4444" stroke-width="1.5" />
-            <circle cx="20" cy="20" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-            <circle cx="40" cy="10" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-            <circle cx="60" cy="25" r="2.5" fill="#fff" stroke="#1e293b" stroke-width="1" />
-            <circle cx="50" cy="50" r="3" fill="#f59e0b" />
-          </svg>
-        </div>
+        <div class="course-hero-img"><img src="E8_root_system.png" alt="Lie Theory"></div>
       </div>
-
       <div class="course-body-grid">
         <div class="course-main">
-          <p class="course-description">
-            Special winter lecture series covering polyhedral combinatorics and cutting plane methods. Designed to give students an intensive overview of discrete optimization frameworks used in theoretical computer science.
-          </p>
           <h2>Lecture notes</h2>
           <ul class="lecture-list">
             <li class="lecture-item">
               <div class="lec-num">1</div>
-              <div class="lec-date">Day 1</div>
-              <div class="lec-topic">Fundamentals of Polyhedral Combinatorics</div>
-              <a href="#" class="lec-badge">note</a>
+              <div class="lec-topic">Lecture 1</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="1">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">2</div>
+              <div class="lec-topic">Lecture 2</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="2">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">3</div>
+              <div class="lec-topic">Lecture 3</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="3">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">4</div>
+              <div class="lec-topic">Lecture 4</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="4">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">5</div>
+              <div class="lec-topic">Lecture 5</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="5">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">6</div>
+              <div class="lec-topic">Lecture 6</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="6">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">7</div>
+              <div class="lec-topic">Lecture 7</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="7">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">8</div>
+              <div class="lec-topic">Lecture 8</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="8">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">9</div>
+              <div class="lec-topic">Lecture 9</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="9">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">10</div>
+              <div class="lec-topic">Lecture 10</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="10">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">11</div>
+              <div class="lec-topic">Lecture 11</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="11">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">12</div>
+              <div class="lec-topic">Lecture 12</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="12">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">13</div>
+              <div class="lec-topic">Lecture 13</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="13">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">14</div>
+              <div class="lec-topic">Lecture 14</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="14">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">15</div>
+              <div class="lec-topic">Lecture 15</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="15">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">16</div>
+              <div class="lec-topic">Lecture 16</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="16">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">17</div>
+              <div class="lec-topic">Lecture 17</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="17">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">18</div>
+              <div class="lec-topic">Lecture 18</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="18">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">19</div>
+              <div class="lec-topic">Lecture 19</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="19">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">20</div>
+              <div class="lec-topic">Lecture 20</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="20">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">21</div>
+              <div class="lec-topic">Lecture 21</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="21">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">22</div>
+              <div class="lec-topic">Lecture 22</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="22">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">23</div>
+              <div class="lec-topic">Lecture 23</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="23">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">24</div>
+              <div class="lec-topic">Lecture 24</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="24">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">25</div>
+              <div class="lec-topic">Lecture 25</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="25">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">26</div>
+              <div class="lec-topic">Lecture 26</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="26">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">27</div>
+              <div class="lec-topic">Lecture 27</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="27">PDF pending</span>
+            </li>
+            <li class="lecture-item">
+              <div class="lec-num">28</div>
+              <div class="lec-topic">Lecture 28</div>
+              <span class="lec-badge unavailable" data-pdf-course="lie-theory" data-pdf-lecture="28">PDF pending</span>
             </li>
           </ul>
-        </div>
-        <div class="course-sidebar">
-          <div class="instructor-box">
-            <p><strong>Instructor:</strong> Seung Jin Lee</p>
-            <p><strong>Email:</strong> </p>
-          </div>
         </div>
       </div>
     </section>
@@ -1262,66 +1721,45 @@ Data Projection: A Sheaf Cohomology Approach</a>
   <script>
     /*
      * COURSE PDF SETTINGS
-     * Upload PDFs to this repository's root, then change only the filename
-     * next to the lecture number. Example: 1: "number-theory-01.pdf"
+     * Upload each PDF to this repository's root, then set only its filename.
+     * Example: 1: 'number-theory-01.pdf'
      */
-    const courseLibrary = [
-      { id: 'number-theory', title: 'Number Theory', image: 'Number Theory1.jpg', imageAlt: 'Number Theory illustration', lectureCount: 28, pdfFiles: { /* 1: 'number-theory-01.pdf', */ } },
-      { id: 'probability-theory', title: 'Probability Theory', image: 'Probability1.png', imageAlt: 'Probability Theory illustration', lectureCount: 28, pdfFiles: { /* 1: 'probability-theory-01.pdf', */ } },
-      { id: 'algebraic-geometry', title: 'Algebraic Geometry', image: 'Algebraic Geometry1.png', imageAlt: 'Algebraic Geometry illustration', lectureCount: 28, pdfFiles: { /* 1: 'algebraic-geometry-01.pdf', */ } },
-      { id: 'algebraic-combinatorics', title: 'Algebraic Combinatorics', image: 'ACombin.webp', imageAlt: 'Algebraic Combinatorics illustration', lectureCount: 28, pdfFiles: { /* 1: 'algebraic-combinatorics-01.pdf', */ } },
-      { id: 'lie-theory', title: 'Lie Theory', image: 'E8_root_system.png', imageAlt: 'Lie Theory illustration', lectureCount: 28, pdfFiles: { /* 1: 'lie-theory-01.pdf', */ } },
-    ];
+    const coursePdfFiles = {
+      'number-theory': {
+        // 1: 'number-theory-01.pdf',
+      },
+      'probability-theory': {
+        // 1: 'probability-theory-01.pdf',
+      },
+      'algebraic-geometry': {
+        // 1: 'algebraic-geometry-01.pdf',
+      },
+      'algebraic-combinatorics': {
+        // 1: 'algebraic-combinatorics-01.pdf',
+      },
+      'lie-theory': {
+        // 1: 'lie-theory-01.pdf',
+      },
+    };
 
-    function escapeCourseHtml(value) {
-      return String(value).replace(/[&<>"]/g, (character) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;',
-      })[character]);
-    }
+    function applyCoursePdfLinks() {
+      document.querySelectorAll('[data-pdf-course]').forEach((placeholder) => {
+        const course = placeholder.dataset.pdfCourse;
+        const lecture = placeholder.dataset.pdfLecture;
+        const filename = coursePdfFiles[course]?.[lecture];
+        if (!filename) return;
 
-    function renderLectureRows(course) {
-      return Array.from({ length: course.lectureCount }, (_, index) => {
-        const number = index + 1;
-        const filename = course.pdfFiles[number] || '';
-        const fileLink = filename
-          ? `<a href="${encodeURI(filename)}" class="lec-badge" target="_blank" rel="noopener">PDF</a>`
-          : '<span class="lec-badge unavailable">PDF pending</span>';
-        return `<li class="lecture-item"><div class="lec-num">${number}</div><div class="lec-topic">Lecture ${number}</div>${fileLink}</li>`;
-      }).join('');
-    }
-
-    function renderCourseLibrary() {
-      const fields = document.getElementById('fields');
-      const cv = document.getElementById('cv');
-      if (!fields || !cv) return;
-
-      fields.innerHTML = `<h1 class="section-title">Fields</h1>
-        <p class="subtext">Lecture notes and openly shared course materials.</p>
-        <div class="course-list">${courseLibrary.map((course) => `
-          <button type="button" class="course-card course-card-button" data-course-id="${course.id}">
-            <span class="course-header"><span class="course-thumb"><img src="${course.image}" alt="${escapeCourseHtml(course.imageAlt)}"></span>
-              <span class="course-info"><span class="course-code">${escapeCourseHtml(course.title)}</span><span class="course-name">${escapeCourseHtml(course.title)}</span><span class="course-history">${course.lectureCount} lectures</span></span>
-              <span class="arrow-icon" aria-hidden="true">v</span>
-            </span>
-          </button>`).join('')}
-        </div>`;
-
-      cv.insertAdjacentHTML('beforebegin', courseLibrary.map((course) => `
-        <section id="course-detail-${course.id}" class="page-section generated-course-page">
-          <div class="breadcrumb"><a href="#fields" data-back-to-fields>Fields</a></div>
-          <div class="course-hero"><div class="course-hero-content"><span class="badge badge-gray">${course.lectureCount} lectures</span><h1>${escapeCourseHtml(course.title)}</h1><p>Openly shared lecture notes.</p></div><div class="course-hero-img"><img src="${course.image}" alt="${escapeCourseHtml(course.imageAlt)}"></div></div>
-          <div class="course-body-grid"><div class="course-main"><h2>Lecture notes</h2><ul class="lecture-list">${renderLectureRows(course)}</ul></div></div>
-        </section>`).join(''));
-
-      fields.querySelectorAll('[data-course-id]').forEach((button) => {
-        button.addEventListener('click', () => navigateTo(null, `course-detail-${button.dataset.courseId}`));
-      });
-      document.querySelectorAll('[data-back-to-fields]').forEach((link) => {
-        link.addEventListener('click', (event) => navigateTo(event, 'fields'));
+        const link = document.createElement('a');
+        link.className = 'lec-badge';
+        link.href = encodeURI(filename);
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'PDF';
+        placeholder.replaceWith(link);
       });
     }
 
-    document.addEventListener('DOMContentLoaded', renderCourseLibrary);
+    document.addEventListener('DOMContentLoaded', applyCoursePdfLinks);
   </script>
 </body>
 </html>
