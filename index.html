@@ -1,97 +1,515 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최유진 (Eugene Choi) - Home</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eugene Choi - Academic Homepage</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #1d4ed8;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-light: #f9fafb;
+      --border-color: #e5e7eb;
+    }
 
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 2rem 1rem 1rem; }
-        .logo { font-size: 1.4rem; font-weight: bold; color: #222; }
-        .menu a { margin-left: 1.2rem; color: #555; font-size: 0.95rem; }
-        .menu a.active { font-weight: bold; border-bottom: 2px solid #0366d6; padding-bottom: 2px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Main Profile Header */
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-        .profile-header { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: flex-start; }
-        .profile-img { width: 180px; height: 220px; object-fit: cover; border-radius: 8px; background: #eee; flex-shrink: 0; }
-        .profile-info h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-        .profile-info p { margin-bottom: 0.4rem; color: #555; font-size: 0.95rem; }
-        .cv-btn { display: inline-block; margin-top: 1rem; padding: 6px 14px; border: 1px solid #ccc; border-radius: 20px; font-size: 0.85rem; color: #444; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
 
-        /* Content Grid */
-        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; }
-        .section-title { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
-        .news-card { background: #f8f9fa; border-radius: 8px; padding: 1.2rem; }
-        .news-item { margin-bottom: 1rem; font-size: 0.88rem; }
-        .news-date { font-size: 0.75rem; color: #777; font-weight: bold; text-transform: uppercase; }
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        @media (max-width: 650px) {
-            .profile-header { flex-direction: column; }
-            .content-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    /* Header & Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 40px;
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+    }
+
+    /* Page Sections */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Typography */
+    h1.section-title {
+      font-family: Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .subtext {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    /* Home Layout */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #f3f4f6;
+    }
+
+    .profile-info h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .profile-info p {
+      margin-bottom: 8px;
+      color: #4b5563;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background: white;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 15px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+    }
+
+    /* News Box */
+    .news-section {
+      background-color: var(--bg-light);
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .news-item {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .news-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .news-date {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Filter Buttons */
+    .filter-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 25px;
+      border: 1px solid var(--border-color);
+      background: white;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: #f3f4f6;
+    }
+
+    .filter-btn.active {
+      background: #1e3a8a;
+      color: white;
+      border-color: #1e3a8a;
+    }
+
+    /* List Items (Publications & Projects) */
+    .pub-item {
+      display: flex;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pub-number {
+      color: var(--text-muted);
+      font-weight: 500;
+      min-width: 30px;
+    }
+
+    .pub-content {
+      flex: 1;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .pub-authors {
+      color: #4b5563;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .pub-authors u {
+      text-decoration-color: #9ca3af;
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-preprint { background: #e0f2fe; color: #0369a1; }
+    .badge-journal { background: #dcfce7; color: #15803d; }
+    .badge-conference { background: #fef3c7; color: #b45309; }
+
+    .venue-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .link-badge {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .link-badge:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding: 30px 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 상단 메뉴 -->
-    <nav>
-        <div class="logo">Eugene Choi</div>
-        <div class="menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Publications</a>
-            <a href="#">Projects</a>
-            <a href="#">Teaching</a>
-            <a href="#">CV</a>
+  <div class="container">
+    <!-- Navigation Header -->
+    <header>
+      <a href="#home" class="site-title" onclick="navigateTo('home')">Eugene Choi</a>
+      <nav>
+        <a class="nav-link active" data-section="home" onclick="navigateTo('home')">Home</a>
+        <a class="nav-link" data-section="publications" onclick="navigateTo('publications')">Publications</a>
+        <a class="nav-link" data-section="projects" onclick="navigateTo('projects')">Projects</a>
+        <a class="nav-link" data-section="teaching" onclick="navigateTo('teaching')">Teaching</a>
+        <a class="nav-link" data-section="cv" onclick="navigateTo('cv')">CV</a>
+      </nav>
+    </header>
+
+    <!-- SECTION 1: HOME -->
+    <section id="home" class="page-section active">
+      <div class="profile-grid">
+        <img src="https://via.placeholder.com/240x280?text=Profile+Image" alt="Profile" class="profile-img">
+        <div class="profile-info">
+          <h2>Eugene Choi</h2>
+          <p><strong>Assistant Professor</strong>, Department of Computer Science</p>
+          <p>Seoul National University</p>
+          <p>Office: Building 301, Room 402</p>
+          <p>E-mail: eugene [at] snu [dot] ac [dot] kr</p>
+          <a href="#" class="btn" onclick="navigateTo('cv')">CV (pdf)</a>
         </div>
-    </nav>
+      </div>
 
-    <div class="container">
-        <!-- 프로필 섹션 -->
-        <div class="profile-header">
-            <!-- 사진이 들어갈 위치입니다. 나중에 본인 사진으로 대체할 수 있습니다. -->
-            <img src="https://via.placeholder.com/180x220" alt="Profile" class="profile-img">
-            <div class="profile-info">
-                <h1>Eugene Choi</h1>
-                <p><b>Assistant Professor</b>, Department of Computer Science</p>
-                <p>Seoul National University</p>
-                <p>Office: Building 301, Room 402</p>
-                <p>E-mail: eugene [at] snu [dot] ac [dot] kr</p>
-                <a href="#" class="cv-btn">CV (pdf)</a>
+      <h2>About</h2>
+      <p style="margin-top: 10px;">
+        안녕하세요! 인공지능, 기계학습 및 최적화 이론을 연구하고 있습니다. 
+        I am an Assistant Professor at Seoul National University. My research interests include artificial intelligence, machine learning, and data science.
+      </p>
+
+      <div class="news-section">
+        <h3>News</h3>
+        <div class="news-item">
+          <div class="news-date">SEP 2026</div>
+          <p>Personal website launched on GitHub Pages!</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">AUG 2026</div>
+          <p>New paper accepted at Conference 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PUBLICATIONS -->
+    <section id="publications" class="page-section">
+      <h1 class="section-title">Publications</h1>
+      <p class="subtext">* corresponding author · <u>underlined</u> names are group members and alumni · (α–β) alphabetical author order</p>
+
+      <!-- Category Filter Buttons -->
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all" onclick="filterPublications('all')">All</button>
+        <button class="filter-btn" data-filter="preprint" onclick="filterPublications('preprint')">Preprints</button>
+        <button class="filter-btn" data-filter="journal" onclick="filterPublications('journal')">Journal articles</button>
+        <button class="filter-btn" data-filter="conference" onclick="filterPublications('conference')">Conference papers</button>
+      </div>
+
+      <div id="pub-list">
+        <!-- Item 1 -->
+        <div class="pub-item" data-category="preprint">
+          <div class="pub-number">36.</div>
+          <div class="pub-content">
+            <a href="#" class="pub-title">Constrained Online Convex Optimization without Slater's Condition</a>
+            <div class="pub-authors"><u>Kihyun Yu</u>, <u>Junehee Lee</u>, Eugene Choi*</div>
+            <div class="pub-meta">
+              <span class="badge badge-preprint">PREPRINT</span>
+              <span class="venue-name">arXiv</span> · June 2026
+              <a href="https://arxiv.org" target="_blank" class="link-badge">arXiv</a>
             </div>
+          </div>
         </div>
 
-        <!-- 본문 2컬럼 레이아웃 -->
-        <div class="content-grid">
-            <!-- 좌측: About 섹션 -->
-            <div>
-                <h2 class="section-title">About</h2>
-                <p>안녕하세요! 여기에 본인의 소개글을 적으시면 됩니다. 전공 분야, 관심 연구 주제, 주요 경력 등을 자유롭게 서술해보세요.</p>
-                <br>
-                <p>I am an assistant professor at Seoul National University. My research interests include artificial intelligence, machine learning, and data science.</p>
+        <!-- Item 2 -->
+        <div class="pub-item" data-category="conference">
+          <div class="pub-number">35.</div>
+          <div class="pub-content">
+            <a href="#" class="pub-title">Algorithm for Contextual Queueing Bandits with Rate-Optimal Queue Length Regret</a>
+            <div class="pub-authors"><u>Seoungbin Bae</u>, Eugene Choi*</div>
+            <div class="pub-meta">
+              <span class="badge badge-conference">CONFERENCE</span>
+              <span class="venue-name">ICML 2026</span> · International Conference on Machine Learning
+              <a href="https://arxiv.org" target="_blank" class="link-badge">arXiv</a>
             </div>
-
-            <!-- 우측: News 사이드바 -->
-            <div>
-                <div class="news-card">
-                    <h2 class="section-title" style="border:none;">News</h2>
-                    <div class="news-item">
-                        <div class="news-date">SEP 2026</div>
-                        <p>Personal website launched on GitHub Pages!</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">AUG 2026</div>
-                        <p>New paper accepted at Conference 2026.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
 
+        <!-- Item 3 -->
+        <div class="pub-item" data-category="journal">
+          <div class="pub-number">34.</div>
+          <div class="pub-content">
+            <a href="#" class="pub-title">A Projection-Free Method for Solving Convex Bilevel Optimization Problems</a>
+            <div class="pub-authors">Khanh-Hung Giang-Tran, Nam Ho-Nguyen, Eugene Choi*</div>
+            <div class="pub-meta">
+              <span class="badge badge-journal">JOURNAL</span>
+              <span class="venue-name">Mathematical Programming</span> · 2025
+              <a href="https://arxiv.org" target="_blank" class="link-badge">paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROJECTS -->
+    <section id="projects" class="page-section">
+      <h1 class="section-title">Projects</h1>
+      <p class="subtext">Research grants and industry collaborations</p>
+      
+      <div class="pub-item">
+        <div class="pub-content">
+          <a href="#" class="pub-title">Center for Foundations of Mathematical Algorithms and Security</a>
+          <p style="font-size: 0.9rem; color: #4b5563;">Science Research Center (SRC) · National Research Foundation of Korea (NRF)</p>
+          <div class="pub-meta" style="margin-top: 8px;">
+            <span class="badge badge-preprint">2026 – 2033</span>
+            <span class="badge badge-journal">ONGOING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TEACHING -->
+    <section id="teaching" class="page-section">
+      <h1 class="section-title">Teaching</h1>
+      <ul style="margin-left: 20px; margin-top: 20px;">
+        <li><strong>CS101: Introduction to Computer Science</strong> (Fall 2026)</li>
+        <li><strong>CS401: Artificial Intelligence & Optimization</strong> (Spring 2026)</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 5: CV -->
+    <section id="cv" class="page-section">
+      <h1 class="section-title">Curriculum Vitae</h1>
+      <p style="margin-top: 15px;">PDF 버전을 다운로드하거나 열람하실 수 있습니다.</p>
+      <a href="#" class="btn" style="margin-top: 15px;">Download CV (PDF)</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      © 2026 Eugene Choi. Powered by GitHub Pages.
+    </footer>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 1. Navigation Controller (SPA Router)
+    function navigateTo(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      // Show target section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      // Update Active Nav Link
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-section') === sectionId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      // Update URL Hash
+      window.location.hash = sectionId;
+    }
+
+    // 2. Publication Filter Controller
+    function filterPublications(category) {
+      // Update Filter Button Active Style
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Show/Hide Publication Items
+      const pubItems = document.querySelectorAll('.pub-item');
+      pubItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. Handle Browser Back/Forward and Initial Load
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) {
+        navigateTo(hash);
+      } else {
+        navigateTo('home');
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) {
+        navigateTo(hash);
+      }
+    });
+  </script>
 </body>
 </html>
